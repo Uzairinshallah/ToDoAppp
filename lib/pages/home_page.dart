@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:neural_genie/pages/red_page.dart';
 import '../data/database.dart';
 import '../util/dialog_box.dart';
 import '../util/functions.dart';
@@ -20,7 +21,6 @@ class _HomePageState extends State<HomePage> {
   ToDoDataBase db = ToDoDataBase();
   final player = AudioPlayer();
 
-
   @override
   void initState() {
     if (_myBox.get("TODOLIST") == null) {
@@ -36,8 +36,14 @@ class _HomePageState extends State<HomePage> {
   void checkBoxChanged(bool? value, int index) {
     setState(
       () {
-        if(db.toDoList[index][1] == false){
+        if (db.toDoList[index][1] == false) {
           player.play(AssetSource("audio.mp3"));
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => RedScreen(),
+            ),
+          );
         }
         db.toDoList[index][1] = true;
 
@@ -56,14 +62,33 @@ class _HomePageState extends State<HomePage> {
       for (int i = 0; i <= db.toDoList.length; i++) {
         count++;
       }
+
+      if (count == 1) {
+        player.play(AssetSource("audio.mp3"));
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedScreen(),
+          ),
+        );
+        db.toDoList.add([_controller.text, false]);
+        _controller.clear();
+
+        return;
+      }
       if (db.toDoList[count - 2][1] == false) {
         Functions.showSnackBar(context, "Please fulfil your previous task");
         _controller.clear();
       } else {
-
-        player.play(
-            AssetSource("audio.mp3"));
+        player.play(AssetSource("audio.mp3"));
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RedScreen(),
+          ),
+        );
         db.toDoList.add([_controller.text, false]);
+
         _controller.clear();
       }
     });
@@ -109,12 +134,26 @@ class _HomePageState extends State<HomePage> {
               itemCount: 49,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
-                return ToDoTile(
-                  index: index + 1,
-                  taskName: buildDoList(index),
-                  taskCompleted: taskValue(index),
-                  onChanged: (value) => checkBoxChanged(value, index),
-                  deleteFunction: (context) => deleteTask(index),
+                return Column(
+                  children: [
+                    ToDoTile(
+                      index: index + 1,
+                      taskName: buildDoList(index),
+                      taskCompleted: taskValue(index),
+                      onChanged: (value) => checkBoxChanged(value, index),
+                      deleteFunction: (context) => deleteTask(index),
+                    ),
+                    (index == 48)
+                        ? getButton('Learn', () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LearnPage(),
+                              ),
+                            );
+                          })
+                        : const SizedBox(),
+                  ],
                 );
               },
               separatorBuilder: (BuildContext context, int index) {
@@ -125,14 +164,6 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
-          getButton('Learn', () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const LearnPage(),
-              ),
-            );
-          }),
           SizedBox(
             height: 30.h,
           ),

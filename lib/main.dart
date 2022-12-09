@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:todoflutter/pages/splashScreen.dart';
+import 'package:neural_genie/pages/splashScreen.dart';
 import 'pages/home_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 void main() async {
   await Hive.initFlutter();
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ScreenUtilInit(
+    return ScreenUtilInit(
       designSize: const Size(428, 926),
       minTextAdapt: true,
       splitScreenMode: true,

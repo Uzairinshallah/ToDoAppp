@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todoflutter/pages/home_page.dart';
+
+import 'home_page.dart';
 
 class LearnPage extends StatelessWidget {
   const LearnPage({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ class LearnPage extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const HomePage(),
+                  builder: (context) =>  const HomePage(),
                 ),
               );
             },

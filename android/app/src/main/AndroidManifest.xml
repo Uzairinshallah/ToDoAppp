@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.todoflutter">
+    package="com.example.neural_genie">
    <application
-        android:label="todoflutter"
+        android:label="neural_genie"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

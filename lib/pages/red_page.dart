@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'home_page.dart';
 
-class SplashScreen extends StatefulWidget {
+class RedScreen extends StatefulWidget {
   @override
   Splash createState() => Splash();
 }
 
-class Splash extends State<SplashScreen> {
+class Splash extends State<RedScreen> {
   @override
   void initState() {
     super.initState();
@@ -18,7 +18,7 @@ class Splash extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(
-      const Duration(seconds: 5),
+      const Duration(seconds: 3),
       () => Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (BuildContext context) => const HomePage(),
@@ -26,14 +26,13 @@ class Splash extends State<SplashScreen> {
       ),
     );
 
-    var assetsImage = const AssetImage('assets/images/splashScreen.jpg');
-    var image = Image(image: assetsImage, height: 200.h);
-
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(color: Colors.white),
-        child: Center(
-          child: image,
+        decoration: const BoxDecoration(color: Colors.red),
+        child: const Center(
+          child: Expanded(
+            child: SizedBox(),
+          ),
         ),
       ), //<- place where the image appears
     );
