@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../data/database.dart';
+import '../pages/confirm_alert.dart';
+import 'functions.dart';
 
 class ToDoTile extends StatefulWidget {
   final String taskName;
@@ -43,9 +45,20 @@ class _ToDoTileState extends State<ToDoTile> {
             Expanded(
               flex: 1,
               child: GestureDetector(
-                onTap: (){
-                  if( widget.taskName.trim().isNotEmpty ) {
-                    widget.onChanged(widget.taskCompleted);
+                onTap: () {
+                  if (widget.taskName.trim().isNotEmpty) {
+                    showDialog(
+                      context: context,
+                      builder: (context) =>
+                          ConfirmAlert(),
+                    ).then(
+                          (val) async {
+                        if (val == true) {
+                          widget.onChanged(widget.taskCompleted);
+                        }
+                      },
+
+                    );
                   }
                 },
                 child: AnimatedSwitcher(
@@ -60,9 +73,12 @@ class _ToDoTileState extends State<ToDoTile> {
             ),
             Expanded(
               flex: 1,
-              child: Center(child: Text(widget.index.toString())),
+              child: Center(
+                child: Text(
+                  widget.index.toString(),
+                ),
+              ),
             ),
-            // task name
             Expanded(
               flex: 5,
               child: Text(
@@ -86,6 +102,4 @@ class _ToDoTileState extends State<ToDoTile> {
     }
     return "assets/images/incmplt.png";
   }
-
-
 }

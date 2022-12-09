@@ -1,8 +1,12 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../data/database.dart';
 import '../util/dialog_box.dart';
+import '../util/functions.dart';
 import '../util/todo_tile.dart';
+import 'learn_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,6 +18,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _myBox = Hive.box('mybox');
   ToDoDataBase db = ToDoDataBase();
+  final player = AudioPlayer();
+
 
   @override
   void initState() {
@@ -30,20 +36,36 @@ class _HomePageState extends State<HomePage> {
   void checkBoxChanged(bool? value, int index) {
     setState(
       () {
-        // db.toDoList[index][1] = true;
-        db.toDoList[index][1] = !taskValue(index);
+        if(db.toDoList[index][1] == false){
+          player.play(AssetSource("audio.mp3"));
+        }
+        db.toDoList[index][1] = true;
+
+        // db.toDoList[index][1] = !taskValue(index);
       },
     );
     db.updateDataBase();
   }
 
   void saveNewTask() {
-    if( _controller.text.trim().isEmpty ){
+    if (_controller.text.trim().isEmpty) {
       return;
     }
+    int count = 0;
     setState(() {
-      db.toDoList.add([_controller.text, false]);
-      _controller.clear();
+      for (int i = 0; i <= db.toDoList.length; i++) {
+        count++;
+      }
+      if (db.toDoList[count - 2][1] == false) {
+        Functions.showSnackBar(context, "Please fulfil your previous task");
+        _controller.clear();
+      } else {
+
+        player.play(
+            AssetSource("audio.mp3"));
+        db.toDoList.add([_controller.text, false]);
+        _controller.clear();
+      }
     });
     Navigator.of(context).pop();
     db.updateDataBase();
@@ -77,34 +99,87 @@ class _HomePageState extends State<HomePage> {
         onPressed: createNewTask,
         child: const Icon(Icons.add),
       ),
-      body: ListView.builder(
-        itemCount: 49,
-        itemBuilder: (context, index) {
-          return ToDoTile(
-            index: index + 1,
-            taskName: buildDoList(index),
-            taskCompleted: taskValue(index),
-            onChanged: (value) => checkBoxChanged(value, index),
-            deleteFunction: (context) => deleteTask(index),
-          );
-        },
+      body: Column(
+        children: [
+          SizedBox(
+            height: 20.h,
+          ),
+          Expanded(
+            child: ListView.separated(
+              itemCount: 49,
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                return ToDoTile(
+                  index: index + 1,
+                  taskName: buildDoList(index),
+                  taskCompleted: taskValue(index),
+                  onChanged: (value) => checkBoxChanged(value, index),
+                  deleteFunction: (context) => deleteTask(index),
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 5),
+                  child: Divider(height: 1, color: Colors.black12),
+                );
+              },
+            ),
+          ),
+          getButton('Learn', () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const LearnPage(),
+              ),
+            );
+          }),
+          SizedBox(
+            height: 30.h,
+          ),
+        ],
       ),
     );
   }
 
- bool taskValue(int index) {
-    if( index >= db.toDoList.length ){
+  bool taskValue(int index) {
+    if (index >= db.toDoList.length) {
       return false;
     }
     return db.toDoList[index][1];
- }
+  }
 
- String buildDoList(int index) {
-    if( index >= db.toDoList.length ){
+  String buildDoList(int index) {
+    if (index >= db.toDoList.length) {
       return "";
     }
     return db.toDoList[index][0];
- }
+  }
 
-
+  Widget getButton(String txt, Function onTap) {
+    return Center(
+      child: InkWell(
+        onTap: () async {
+          onTap();
+        },
+        child: Container(
+          height: 50.h,
+          width: 200.w,
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: Center(
+            child: Text(
+              txt,
+              style: TextStyle(
+                fontSize: 24.w,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }

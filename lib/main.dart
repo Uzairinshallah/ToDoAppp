@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:todoflutter/pages/splashScreen.dart';
 import 'pages/home_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,10 +22,10 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return const MaterialApp(
+        return MaterialApp(
           debugShowCheckedModeBanner: false,
           home: Scaffold(
-            body: HomePage(),
+            body: SplashScreen(),
           ),
         );
       },
