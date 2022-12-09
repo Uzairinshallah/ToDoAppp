@@ -65,15 +65,8 @@ class _HomePageState extends State<HomePage> {
 
       if (count == 1) {
         player.play(AssetSource("audio.mp3"));
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => RedScreen(),
-          ),
-        );
         db.toDoList.add([_controller.text, false]);
         _controller.clear();
-
         return;
       }
       if (db.toDoList[count - 2][1] == false) {
@@ -81,12 +74,7 @@ class _HomePageState extends State<HomePage> {
         _controller.clear();
       } else {
         player.play(AssetSource("audio.mp3"));
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => RedScreen(),
-          ),
-        );
+
         db.toDoList.add([_controller.text, false]);
 
         _controller.clear();
