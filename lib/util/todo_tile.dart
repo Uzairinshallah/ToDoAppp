@@ -6,7 +6,7 @@ class ToDoTile extends StatefulWidget {
   final String taskName;
   final int index;
   final bool taskCompleted;
-  Function(bool?)? onChanged;
+  Function(bool?) onChanged;
   Function(BuildContext)? deleteFunction;
 
   ToDoTile({
@@ -35,16 +35,18 @@ class _ToDoTileState extends State<ToDoTile> {
         child: Row(
           children: [
             // checkbox
-            Checkbox(
-              value: widget.taskCompleted,
-              onChanged: widget.onChanged,
-              activeColor: Colors.black,
-            ),
+            // Checkbox(
+            //   value: widget.taskCompleted,
+            //   onChanged: widget.onChanged,
+            //   activeColor: Colors.black,
+            // ),
             Expanded(
               flex: 1,
-              child: InkWell(
-                onTap: () async {
-
+              child: GestureDetector(
+                onTap: (){
+                  if( widget.taskName.trim().isNotEmpty ) {
+                    widget.onChanged(widget.taskCompleted);
+                  }
                 },
                 child: AnimatedSwitcher(
                   duration: const Duration(milliseconds: 500),
@@ -64,7 +66,7 @@ class _ToDoTileState extends State<ToDoTile> {
             Expanded(
               flex: 5,
               child: Text(
-                widget.taskName ?? "",
+                widget.taskName,
                 style: TextStyle(
                   decoration: widget.taskCompleted
                       ? TextDecoration.lineThrough

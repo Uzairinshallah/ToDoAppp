@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todoflutter/pages/home_page.dart';
 
 
@@ -10,7 +11,7 @@ class LearnPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
+          const Expanded(
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus turpis felis, non molestie nunc tempor nec. Sed orci quam, condimentum non erat a, suscipit pharetra massa. Sed aliquam ex arcu, ac gravida metus fermentum non. Curabitur id volutpat arcu, quis rhoncus ex. Curabitur eget pulvinar odio. Nam suscipit nibh vitae sapien hendrerit placerat. Aliquam vel mauris varius dolor fermentum posuere quis quis nisl."
                 "Integer eu gravida metus. Aenean nec libero varius, lacinia leo eget, ultricies ex. Ut in maximus augue. Vivamus a lectus molestie, tempus leo a, finibus dui. Etiam mollis velit id viverra laoreet. Etiam ut quam augue. Phasellus sed justo sed mauris finibus molestie id id nibh. Praesent vitae libero turpis. Morbi pretium justo in congue lacinia."

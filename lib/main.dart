@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'pages/home_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 void main() async {
@@ -15,12 +16,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenUtilInit(
+    return  ScreenUtilInit(
       designSize: const Size(428, 926),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return const MaterialApp(
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             body: HomePage(),

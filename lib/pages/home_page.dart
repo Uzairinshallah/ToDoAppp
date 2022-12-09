@@ -28,16 +28,19 @@ class _HomePageState extends State<HomePage> {
   final _controller = TextEditingController();
 
   void checkBoxChanged(bool? value, int index) {
-    print('check called');
-    print(index);
-    setState(() {
-      db.toDoList[index][1] = true;
-      // db.toDoList[index][1] = !db.toDoList[index][1];
-    });
+    setState(
+      () {
+        // db.toDoList[index][1] = true;
+        db.toDoList[index][1] = !taskValue(index);
+      },
+    );
     db.updateDataBase();
   }
 
   void saveNewTask() {
+    if( _controller.text.trim().isEmpty ){
+      return;
+    }
     setState(() {
       db.toDoList.add([_controller.text, false]);
       _controller.clear();
@@ -75,18 +78,33 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add),
       ),
       body: ListView.builder(
-        itemCount: db.toDoList.length,
+        itemCount: 49,
         itemBuilder: (context, index) {
           return ToDoTile(
-            index: index+1,
-            taskName: db.toDoList[index][0],
-            taskCompleted: db.toDoList[index][1],
+            index: index + 1,
+            taskName: buildDoList(index),
+            taskCompleted: taskValue(index),
             onChanged: (value) => checkBoxChanged(value, index),
             deleteFunction: (context) => deleteTask(index),
-
           );
         },
       ),
     );
   }
+
+ bool taskValue(int index) {
+    if( index >= db.toDoList.length ){
+      return false;
+    }
+    return db.toDoList[index][1];
+ }
+
+ String buildDoList(int index) {
+    if( index >= db.toDoList.length ){
+      return "";
+    }
+    return db.toDoList[index][0];
+ }
+
+
 }
