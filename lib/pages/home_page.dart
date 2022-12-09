@@ -82,6 +82,21 @@ class _HomePageState extends State<HomePage> {
     });
     Navigator.of(context).pop();
     db.updateDataBase();
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => RedScreen(),
+      ),
+    );
+
+    // Future.delayed(const Duration(microseconds: 50)).then((value) {
+    //   Navigator.pushReplacement(
+    //     context,
+    //     MaterialPageRoute(
+    //       builder: (context) => RedScreen(),
+    //     ),
+    //   );
+    // });
   }
 
   void createNewTask() {
