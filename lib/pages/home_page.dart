@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:neural_genie/pages/red_page.dart';
 import '../data/database.dart';
+import '../dialogs/list_complete_dialog.dart';
 import '../util/dialog_box.dart';
 import '../util/functions.dart';
 import '../util/todo_tile.dart';
@@ -39,17 +40,33 @@ class _HomePageState extends State<HomePage> {
     setState(
       () {
         if (db.toDoList[index][1] == false) {
+          debugPrint("length 2 : ${db.toDoList.length} ");
           player.play(AssetSource("audio.mp3"));
-          Timer(const Duration(seconds: 1), () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const RedScreen(
-                  color: Color(0xff6b009c),
+          Timer(
+            const Duration(seconds: 1),
+            () {
+              debugPrint("length: ${db.toDoList.length} ");
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RedScreen(
+                    color: Color(0xff6b009c),
+                  ),
                 ),
-              ),
-            );
-          });
+              ).then(
+                (value) {
+                  if (db.toDoList.length == 17) {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const ListCompleteDialog();
+                      },
+                    );
+                  }
+                },
+              );
+            },
+          );
         }
         db.toDoList[index][1] = true;
 
@@ -90,7 +107,7 @@ class _HomePageState extends State<HomePage> {
     db.updateDataBase();
 
     Timer(const Duration(seconds: 1), () {
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => const RedScreen(
@@ -111,9 +128,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   void createNewTask() {
-    int recentIndex = db.toDoList.length -1;
-    var completed =   db.toDoList[recentIndex][1];
-    if( !completed ){
+    int recentIndex = db.toDoList.length - 1;
+    var completed = db.toDoList[recentIndex][1];
+    if (!completed) {
       Functions.showSnackBar(context, "Please fulfil your previous task");
       return;
     }
@@ -144,9 +161,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: buttonColor(),
         onPressed: createNewTask,
         // child: const Icon(Icons.add),
-        child:  const ImageIcon(
-          AssetImage("assets/images/cmplt.png")
-        ),
+        child: const ImageIcon(AssetImage("assets/images/cmplt.png")),
       ),
       body: Column(
         children: [
@@ -204,10 +219,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   MaterialColor buttonColor() {
-    int recentIndex = db.toDoList.length -1;
-    var completed =   db.toDoList[recentIndex][1];
-    if( !completed ){
-      return Colors.grey ;
+    int recentIndex = db.toDoList.length - 1;
+    var completed = db.toDoList[recentIndex][1];
+    if (!completed) {
+      return Colors.grey;
     }
 
     return Colors.pink;
