@@ -44,7 +44,9 @@ class _HomePageState extends State<HomePage> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => RedScreen(),
+                builder: (context) => const RedScreen(
+                  color: Color(0xff6b009c),
+                ),
               ),
             );
           });
@@ -91,7 +93,9 @@ class _HomePageState extends State<HomePage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => RedScreen(),
+          builder: (context) => const RedScreen(
+            color: Colors.grey,
+          ),
         ),
       );
     });
@@ -151,7 +155,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             child: ListView.separated(
-              itemCount: 49,
+              itemCount: itemCount(),
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return Column(
@@ -190,6 +194,13 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  int itemCount() {
+    // if( db.toDoList.length > 49 ){
+    //   return db.toDoList.length;
+    // }
+    return 49;
   }
 
   MaterialColor buttonColor() {
