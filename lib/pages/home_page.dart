@@ -204,7 +204,6 @@ class _HomePageState extends State<HomePage> {
     if (db.toDoList.length >= 49) {
       return null;
     }
-
     return FloatingActionButton(
       backgroundColor: buttonColor(),
       onPressed: createNewTask,

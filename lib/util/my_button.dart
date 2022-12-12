@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ccolors.dart';
+
 class MyButton extends StatelessWidget {
   final String text;
  final VoidCallback onPressed;
@@ -13,7 +15,7 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
-      color: Theme.of(context).primaryColor,
+      color: CColors.themeColor,
       child: Text(text, style: const TextStyle(color: Colors.white)),
     );
   }

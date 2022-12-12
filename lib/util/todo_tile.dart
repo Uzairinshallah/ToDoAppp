@@ -52,7 +52,7 @@ class _ToDoTileState extends State<ToDoTile> {
                   duration: const Duration(milliseconds: 500),
                   child: Card(
                     margin: EdgeInsets.zero,
-                    elevation: 6,
+                    elevation: 26,
                     shape: const CircleBorder(),
                     clipBehavior: Clip.antiAlias,
                     child: Image(

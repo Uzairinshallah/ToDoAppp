@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../util/ccolors.dart';
 import '../util/functions.dart';
 
 class ConfirmAlert extends StatefulWidget {
@@ -55,7 +56,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                         height: 50.h,
                         width: 100.w,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: CColors.themeColor,
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: Center(
@@ -86,7 +87,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                         height: 50.h,
                         width: 100.w,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: CColors.themeColor,
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: Center(
