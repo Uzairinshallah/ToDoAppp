@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
     Navigator.of(context).pop();
     db.updateDataBase();
 
-    Timer(Duration(seconds: 1), () {
+    Timer(const Duration(seconds: 1), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -107,6 +107,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   void createNewTask() {
+    int recentIndex = db.toDoList.length -1;
+    var completed =   db.toDoList[recentIndex][1];
+    if( !completed ){
+      Functions.showSnackBar(context, "Please fulfil your previous task");
+      return;
+    }
     showDialog(
       context: context,
       builder: (context) {
@@ -131,9 +137,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.pink,
+        backgroundColor: buttonColor(),
         onPressed: createNewTask,
-        child: const Icon(Icons.add),
+        // child: const Icon(Icons.add),
+        child:  const ImageIcon(
+          AssetImage("assets/images/cmplt.png")
+        ),
       ),
       body: Column(
         children: [
@@ -181,6 +190,16 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  MaterialColor buttonColor() {
+    int recentIndex = db.toDoList.length -1;
+    var completed =   db.toDoList[recentIndex][1];
+    if( !completed ){
+      return Colors.grey ;
+    }
+
+    return Colors.pink;
   }
 
   bool taskValue(int index) {

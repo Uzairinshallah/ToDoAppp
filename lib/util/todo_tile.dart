@@ -46,20 +46,7 @@ class _ToDoTileState extends State<ToDoTile> {
               flex: 1,
               child: GestureDetector(
                 onTap: () {
-                  if (widget.taskName.trim().isNotEmpty) {
-                    showDialog(
-                      context: context,
-                      builder: (context) =>
-                          ConfirmAlert(),
-                    ).then(
-                          (val) async {
-                        if (val == true) {
-                          widget.onChanged(widget.taskCompleted);
-                        }
-                      },
-
-                    );
-                  }
+                  completeTask(context);
                 },
                 child: AnimatedSwitcher(
                   duration: const Duration(milliseconds: 500),
@@ -96,10 +83,28 @@ class _ToDoTileState extends State<ToDoTile> {
     );
   }
 
-  String getImagePath(bool show) {
-    if (show) {
-      return "assets/images/cmplt.png";
+  void completeTask(BuildContext context) {
+    if( widget.taskCompleted ){
+      return;
     }
-    return "assets/images/incmplt.png";
+    if (widget.taskName.trim().isNotEmpty) {
+      showDialog(
+        context: context,
+        builder: (context) => ConfirmAlert(),
+      ).then(
+        (val) async {
+          if (val == true) {
+            widget.onChanged(widget.taskCompleted);
+          }
+        },
+      );
+    }
+  }
+
+  String getImagePath(bool complete) {
+    if (complete) {
+      return "assets/images/complete.gif";
+    }
+    return "assets/images/incomplete.gif";
   }
 }
