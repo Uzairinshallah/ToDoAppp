@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,12 +40,14 @@ class _HomePageState extends State<HomePage> {
       () {
         if (db.toDoList[index][1] == false) {
           player.play(AssetSource("audio.mp3"));
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => RedScreen(),
-            ),
-          );
+          Timer(const Duration(seconds: 1), () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => RedScreen(),
+              ),
+            );
+          });
         }
         db.toDoList[index][1] = true;
 
@@ -82,13 +86,16 @@ class _HomePageState extends State<HomePage> {
     });
     Navigator.of(context).pop();
     db.updateDataBase();
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => RedScreen(),
-      ),
-    );
 
+    Timer(Duration(seconds: 1), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => RedScreen(),
+        ),
+      );
+    });
+    //
     // Future.delayed(const Duration(microseconds: 50)).then((value) {
     //   Navigator.pushReplacement(
     //     context,
@@ -124,6 +131,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.pink,
         onPressed: createNewTask,
         child: const Icon(Icons.add),
       ),

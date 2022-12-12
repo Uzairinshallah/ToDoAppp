@@ -27,7 +27,7 @@ class Splash extends State<SplashScreen> {
     );
 
     var assetsImage = const AssetImage('assets/images/splashScreen.jpg');
-    var image = Image(image: assetsImage, height: 200.h);
+    var image = Image(image: assetsImage, height: 400.h,);
 
     return Scaffold(
       body: Container(

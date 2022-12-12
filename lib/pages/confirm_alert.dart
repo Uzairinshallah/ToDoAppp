@@ -24,19 +24,6 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
     screenHeight = MediaQuery.of(context).size.height;
     return AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      title: Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-          color: Colors.blue,
-        ),
-        padding: const EdgeInsets.all(15),
-        child: const Text(
-          'Confirmation',
-          textAlign: TextAlign.center,
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
       titlePadding: const EdgeInsets.all(0),
       content: SingleChildScrollView(
         child: Column(
@@ -51,36 +38,72 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
               ),
             ),
             getHeight(20.h),
-            InkWell(
-              onTap: () async {
-                Functions.showSnackBar(context, "List added Successfully");
-                Navigator.of(context).pop();
-              },
-              child: Center(
-                child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).pop(true);
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () async {
+                    Functions.showSnackBar(context, "List added Successfully");
+                    Navigator.of(context).pop();
                   },
-                  child: Container(
-                    height: 50.h,
-                    width: 200.w,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Yes",
-                        style: TextStyle(
-                          fontSize: 24.w,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                  child: Center(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop(true);
+                      },
+                      child: Container(
+                        height: 50.h,
+                        width: 100.w,
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Yes",
+                            style: TextStyle(
+                              fontSize: 24.w,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
+                SizedBox(width: 10.w,),
+                InkWell(
+                  onTap: () async {
+                    Navigator.of(context).pop();
+                  },
+                  child: Center(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop(false);
+                      },
+                      child: Container(
+                        height: 50.h,
+                        width: 100.w,
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "No",
+                            style: TextStyle(
+                              fontSize: 24.w,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
