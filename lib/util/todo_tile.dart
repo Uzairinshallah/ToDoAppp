@@ -50,10 +50,16 @@ class _ToDoTileState extends State<ToDoTile> {
                 },
                 child: AnimatedSwitcher(
                   duration: const Duration(milliseconds: 500),
-                  child: Image(
-                    key: UniqueKey(),
-                    image: AssetImage(getImagePath(widget.taskCompleted)),
-                    width: double.infinity,
+                  child: Card(
+                    margin: EdgeInsets.zero,
+                    elevation: 6,
+                    shape: const CircleBorder(),
+                    clipBehavior: Clip.antiAlias,
+                    child: Image(
+                      key: UniqueKey(),
+                      image: AssetImage(getImagePath(widget.taskCompleted)),
+                      width: double.infinity,
+                    ),
                   ),
                 ),
               ),

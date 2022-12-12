@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ).then(
                 (value) {
-                  if (db.toDoList.length == 17) {
+                  if (db.toDoList.length == 49) {
                     showDialog(
                       context: context,
                       builder: (context) {
@@ -157,12 +157,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: buttonColor(),
-        onPressed: createNewTask,
-        // child: const Icon(Icons.add),
-        child: const ImageIcon(AssetImage("assets/images/cmplt.png")),
-      ),
+      floatingActionButton: buildFloatingActionButton(),
       body: Column(
         children: [
           SizedBox(
@@ -208,6 +203,19 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+    );
+  }
+
+  FloatingActionButton? buildFloatingActionButton() {
+    if( db.toDoList.length >=18 ){
+      return null;
+    }
+
+    return FloatingActionButton(
+      backgroundColor: buttonColor(),
+      onPressed: createNewTask,
+      // child: const Icon(Icons.add),
+      child: const ImageIcon(AssetImage("assets/images/cmplt.png")),
     );
   }
 
