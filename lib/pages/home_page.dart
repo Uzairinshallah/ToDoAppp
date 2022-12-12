@@ -7,6 +7,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:neural_genie/pages/red_page.dart';
 import '../data/database.dart';
 import '../dialogs/list_complete_dialog.dart';
+import '../util/ccolors.dart';
 import '../util/dialog_box.dart';
 import '../util/functions.dart';
 import '../util/todo_tile.dart';
@@ -178,14 +179,7 @@ class _HomePageState extends State<HomePage> {
                       deleteFunction: (context) => deleteTask(index),
                     ),
                     (index == 48)
-                        ? getButton('Learn', () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const LearnPage(),
-                              ),
-                            );
-                          })
+                        ? elevatedButton()
                         : const SizedBox(),
                   ],
                 );
@@ -207,7 +201,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   FloatingActionButton? buildFloatingActionButton() {
-    if( db.toDoList.length >=18 ){
+    if (db.toDoList.length >= 49) {
       return null;
     }
 
@@ -276,5 +270,41 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  Widget elevatedButton() {
+    return Card(
+      margin: EdgeInsets.zero,
+      clipBehavior: Clip.antiAlias,
+      elevation: 5,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (ctx) {
+                return const LearnPage();
+              },
+            ),
+          );
+        },
+        child: Container(
+          width: 95,
+          height: 35,
+          decoration: BoxDecoration(
+            color: CColors.themeColor,
+          ),
+          child: Center(
+            child: Text(
+              "Learn",
+              style: buildTextStyle(),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+  TextStyle buildTextStyle() {
+    return const TextStyle(fontSize: 25, color: Colors.white);
   }
 }

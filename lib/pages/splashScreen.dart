@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neural_genie/pages/learn_page.dart';
 
 import '../util/ccolors.dart';
 import 'home_page.dart';
@@ -41,39 +42,80 @@ class Splash extends State<SplashScreen> {
           children: [
             Image.asset(
               "assets/images/complete.gif",
-              width: 70,
-              height: 70,
+              width: 150,
+              height: 100,
             ),
             const Text(
               "Neural Genie",
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 40,
+                fontWeight: FontWeight.w500,
                 color: Color(0xff6b009c),
               ),
             ),
             const SizedBox(
               height: 50,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: buildStyleFrom(),
-              child: const Text(
-                "Learn",
-                style: TextStyle(
-                  fontSize: 18,
+            Card(
+              margin: EdgeInsets.zero,
+              clipBehavior: Clip.antiAlias,
+              elevation: 5,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) {
+                        return const LearnPage();
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 95,
+                  height: 35,
+                  decoration: BoxDecoration(
+                    color: CColors.themeColor,
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Learn",
+                      style: buildTextStyle(),
+                    ),
+                  ),
                 ),
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 25,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: buildStyleFrom(),
-              child: const Text(
-                "List",
-                style: TextStyle(
-                  fontSize: 18,
+            Card(
+              margin: EdgeInsets.zero,
+              clipBehavior: Clip.antiAlias,
+              elevation: 5,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) {
+                        return const HomePage();
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 95,
+                  height: 35,
+                  decoration: BoxDecoration(
+                    color: CColors.themeColor,
+                  ),
+                  child: Center(
+                    child: Text(
+                      "List",
+                      style: buildTextStyle(),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -83,7 +125,7 @@ class Splash extends State<SplashScreen> {
     );
   }
 
-  ButtonStyle buildStyleFrom() {
-    return ElevatedButton.styleFrom(backgroundColor: const Color(0xff6b009c),minimumSize: 50);
+  TextStyle buildTextStyle() {
+    return const TextStyle(fontSize: 25, color: Colors.white);
   }
 }
