@@ -178,9 +178,7 @@ class _HomePageState extends State<HomePage> {
                       onChanged: (value) => checkBoxChanged(value, index),
                       deleteFunction: (context) => deleteTask(index),
                     ),
-                    (index == 48)
-                        ? elevatedButton()
-                        : const SizedBox(),
+                    (index == 48) ? elevatedButton() : const SizedBox(),
                   ],
                 );
               },
@@ -205,11 +203,12 @@ class _HomePageState extends State<HomePage> {
       return null;
     }
     return FloatingActionButton(
-      backgroundColor: buttonColor(),
-      onPressed: createNewTask,
-      // child: const Icon(Icons.add),
-      child: const ImageIcon(AssetImage("assets/images/cmplt.png")),
-    );
+        backgroundColor: buttonColor(),
+        onPressed: createNewTask,
+        child: Image(image: AssetImage("assets/images/add.png"),)
+
+        // child: const ImageIcon(AssetImage("assets/images/add.png")),
+        );
   }
 
   int itemCount() {
@@ -303,6 +302,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
   TextStyle buildTextStyle() {
     return const TextStyle(fontSize: 25, color: Colors.white);
   }
