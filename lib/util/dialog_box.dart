@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'ccolors.dart';
 import 'my_button.dart';
 
 class DialogBox extends StatelessWidget {
@@ -26,7 +28,7 @@ class DialogBox extends StatelessWidget {
             controller: controller,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              hintText: "Add a new task",
+              hintText: "Tell me your next Divination",
             ),
           ),
 
@@ -38,10 +40,53 @@ class DialogBox extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // save button
-              MyButton(text: "Save", onPressed: onSave),
+              InkWell(
+                onTap: onSave,
+                child: Container(
+                  height: 50.h,
+                  width: 100.w,
+                  decoration: BoxDecoration(
+                    color: CColors.themeColor,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Commit",
+                      style: TextStyle(
+                        fontSize: 24.w,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              // MyButton(text: "Commit", onPressed: onSave),
               const SizedBox(width: 8),
               // cancel button
-              MyButton(text: "Cancel", onPressed: onCancel),
+              InkWell(
+                onTap: onCancel,
+                child: Container(
+                  height: 50.h,
+                  width: 100.w,
+                  decoration: BoxDecoration(
+                    color: CColors.themeColor,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Cancel",
+                      style: TextStyle(
+                        fontSize: 24.w,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              // MyButton(text: "Cancel", onPressed: onCancel),
+
             ],
           ),
         ],

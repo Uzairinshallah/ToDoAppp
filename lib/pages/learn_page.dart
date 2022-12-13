@@ -38,18 +38,18 @@ class LearnPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
+                children: const [
+                  Text(
                     '●	',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 10,
                   ),
-                  const Expanded(
+                  Expanded(
                     child: Text(
                       'Do you find that your life is without direction and meaning, and that no matter how hard '
                       'you try, you can’t get what you want?',
@@ -63,7 +63,7 @@ class LearnPage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 15.h,
+                height: 10.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -195,7 +195,7 @@ class LearnPage extends StatelessWidget {
                         ),
                       ),
                       TextSpan(
-                        text: " with almost no effort from you.",
+                        text: " with almost no effort from you.\n",
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w500,
@@ -209,9 +209,7 @@ class LearnPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const SizedBox(
-                height: 5,
-              ),
+
               Text(
                 "Here are some benefits of controlling our Genie:\n\n"
                 "We’re told that we will be happy if we are successful, but in "
@@ -361,11 +359,9 @@ class LearnPage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 15.h,
+                height: 10.h,
               ),
-              const SizedBox(
-                height: 20,
-              ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -393,7 +389,7 @@ class LearnPage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 15.h,
+                height: 10.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -538,7 +534,7 @@ class LearnPage extends StatelessWidget {
                   text: const TextSpan(
                       text: "This is",
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
                       ),
@@ -546,7 +542,7 @@ class LearnPage extends StatelessWidget {
                         TextSpan(
                           text: " reinforcement, ",
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 11,
                             fontStyle: FontStyle.italic,
                             fontWeight: FontWeight.w600,
                             color: Colors.black,
@@ -555,7 +551,7 @@ class LearnPage extends StatelessWidget {
                         TextSpan(
                           text: "  where the Genie learns that what you write in The List will happen.\n",
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 11,
                             fontWeight: FontWeight.w600,
                             color: Colors.black,
                           ),

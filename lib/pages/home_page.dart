@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
         context,
         MaterialPageRoute(
           builder: (context) => const RedScreen(
-            color: Colors.grey,
+            color: Color(0xff6b009c),
           ),
         ),
       );
@@ -205,7 +205,9 @@ class _HomePageState extends State<HomePage> {
     return FloatingActionButton(
         backgroundColor: buttonColor(),
         onPressed: createNewTask,
-        child: Image(image: AssetImage("assets/images/add.png"),)
+        child: const Image(
+          image: AssetImage("assets/images/add.png"),
+        )
 
         // child: const ImageIcon(AssetImage("assets/images/add.png")),
         );
