@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neural_genie/util/app_text_style.dart';
 
 import '../util/ccolors.dart';
 import 'home_page.dart';
@@ -24,21 +25,21 @@ class LearnPage extends StatelessWidget {
                 width: 150,
                 height: 100,
               ),
-              const Text(
-                "Neural Genie",
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff6b009c),
-                ),
-              ),
+              Text("Neural Genie",
+                  style: AppTextStyle.lex(
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff6b009c),
+                    ),
+                  )),
               SizedBox(
                 height: 30.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     '●	',
                     style: TextStyle(
@@ -54,10 +55,7 @@ class LearnPage extends StatelessWidget {
                       'Do you find that your life is without direction and meaning, and that no matter how hard '
                       'you try, you can’t get what you want?',
                       textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: buildTextStyle(),
                     ),
                   ),
                 ],
@@ -68,7 +66,7 @@ class LearnPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     '●	',
                     style: TextStyle(
@@ -83,10 +81,7 @@ class LearnPage extends StatelessWidget {
                     child: Text(
                       'Have you ever wondered why some people seem to be born lucky and attract good things to themselves?',
                       textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: buildTextStyle(),
                     ),
                   ),
                 ],
@@ -94,56 +89,88 @@ class LearnPage extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const Text(
+              Text(
                 'Imagine how it would feel if you discovered a magic lamp, rubbed it, and a Genie appeared to grant your wishes.  The good news is that the lamp is already in your hands!  The Genie in the '
                 'lamp is your subconscious mind, the Genie’s body is the magical neural network of your brain.',
                 textAlign: TextAlign.justify,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Text(
-                'You are not aware of it, but the Genie works very hard for you, controlling almost all of your life .  You think it’s your conscious mind  that makes your decisions but what usually happens is that the Genie conjures up a lightning-fast decision, feeling or emotion.  Only much later - in terms of brain speed - does your conscious mind invent a “logical” reason why the Genie made that decision .'
-                '  Your conscious mind even invents realities - which look totally real to you - to fit what the Genie has already come up with.',
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Text(
-                'You can’t talk directly to the Genie - nobody can.  It stays hidden in the lamp.  The only way to see what the Genie does is to look at what you have truly done in your life (not what you think you have done), or ask friends to honestly say what sort of person you are.'
-                '  If parts of your life haven’t gone as you would like or you are struggling to make certain things work however hard you try, it’s probably because your Genie isn’t coded for those results.  This explains why you can read hundreds of self-help books, but not be better for it, because you aren’t really living what they preach - you need to convince your Genie.',
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Text(
-                'Most of the Genie’s instructions were not programmed by you, they were programmed by other people, '
-                'especially during your early years.  It’s likely that those people you know who were “born lucky” and attract things to themselves just happen to have Genies with the right coding.',
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w700,
-                ),
+                style: buildTextStyle(),
               ),
               const SizedBox(
                 height: 15,
               ),
               RichText(
-                text: const TextSpan(
+                text: TextSpan(
+                  text:
+                      'You are not aware of it, but the Genie works very hard for you,'
+                      ' controlling almost all of your life .  You think it’s your conscious ',
+                  style: richTextStyle(),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "mind  that",
+                      style: richLineTextStyle(),
+                    ),
+                    TextSpan(
+                      text:
+                          "  makes your decisions but what usually happens is that the Genie conjures up a lightning-fast decision,"
+                          ' feeling or emotion.  Only much later - in terms of brain speed - does your conscious mind invent'
+                          ' a “logical” reason why the Genie made that decision .Your conscious mind even invents realities - which look ',
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+                    TextSpan(
+                      text: "totally",
+                      style: richLineTextStyle(),
+                    ),
+                    TextSpan(
+                      text:
+                          " real to you - to fit what he Genie has already come up with.",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+
+              RichText(
+                text: TextSpan(
+                  text:
+                  " You can’t talk directly to the Genie - nobody can.  It stays hidden in the lamp.  The only way"
+                      " to see what the Genie does is to look at what you have truly done in your life (not what you ",
+                  style: richTextStyle(),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: " think ",
+                      style: itelicTextStyle(),
+                    ),
+
+                    TextSpan(
+                      text: "you have done), or asking friends to honestly say what sort of person you are.  If parts of your life haven’t gone as you would like or you are struggling to make certain things work however hard you try, it’s probably because your Genie isn’t coded for those results.  This explains why you can read hundreds of self-help books, but not be better for it, "
+                          "because you aren’t really living what they preach - you need to convince your Genie",
+                      style: richTextStyle(),
+                    ),
+
+                  ],
+                ),
+              ),
+
+              const SizedBox(
+                height: 15,
+              ),
+              Text(
+                  'Most of the Genie’s instructions were not programmed by you, they were programmed by other people, '
+                  'especially during your early years.  It’s likely that those people you know who were “born lucky” and attract things to themselves just happen to have Genies with the right coding.',
+                  textAlign: TextAlign.justify,
+                  style: buildTextStyle()),
+              const SizedBox(
+                height: 15,
+              ),
+              RichText(
+                text: TextSpan(
                     text:
                         'Now is the time for you to fight back, catch up, and take '
                         'control of your Genie to bring good things into your life. '
@@ -155,77 +182,76 @@ class LearnPage extends StatelessWidget {
                         'which is rare. Nor is the technique designed to influence '
                         'things that you can’t directly affect - but it is '
                         'surprising what you can affect',
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: richTextStyle(),
                     children: <TextSpan>[
                       TextSpan(
                         text: " indirectly.",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.black,
-                          fontStyle: FontStyle.italic,
-                          // fontWeight: FontWeight.w700,
+                        style: AppTextStyle.lex(
+                          style: itelicTextStyle(),
                         ),
                       ),
                     ]),
               ),
-
               const SizedBox(
                 height: 10,
               ),
               RichText(
-                text: const TextSpan(
+                text: TextSpan(
                     text: "The Neural Genie approach",
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                    ),
+                    style: richTextStyle(),
                     children: <TextSpan>[
                       TextSpan(
                         text:
                             " teaches your Genie to believe through life experience",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black,
+                        style: AppTextStyle.lex(
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                       TextSpan(
                         text: " with almost no effort from you.\n",
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black,
-                        ),
+                        style: richTextStyle(),
                       ),
                     ]),
               ),
-
               imageWidget("assets/images/complete.gif"),
               const SizedBox(
                 height: 20,
               ),
+              RichText(
+                text: TextSpan(
+                  text: "Here are some benefits of controlling our Genie:\n\n"
+                      "We’re told that we will be happy if we are successful, but in "
+                      "fact it’s the other way around .  Happiness leads to success.  "
+                      "And happiness comes from within the mind. ",
+                  style: richTextStyle(),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "If ",
+                      style: itelicTextStyle(),
+                    ),
+                    TextSpan(
+                      text: "we can control "
+                          "our Genie.\n\nWe’re told that our genes determine what our "
+                          "bodies become, how we behave, and which diseases we are "
+                          "likely to succumb to - as if we are completely helpless and "
+                          "must accept what we have.  But genes aren’t the full story. "
+                          "The signals that our brain sends out can indirectly determine "
+                          "which parts of the genes switch on and off.  We know that "
+                          "stress can cause disease.We know that happiness fights disease. "
+                          "If we can control our Genie.",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
 
-              Text(
-                "Here are some benefits of controlling our Genie:\n\n"
-                "We’re told that we will be happy if we are successful, but in "
-                "fact it’s the other way around .  Happiness leads to success.  "
-                "And happiness comes from within the mind.  If we can control "
-                "our Genie.\n\nWe’re told that our genes determine what our "
-                "bodies become, how we behave, and which diseases we are "
-                "likely to succumb to - as if we are completely helpless and "
-                "must accept what we have.  But genes aren’t the full story. "
-                "The signals that our brain sends out can indirectly determine "
-                "which parts of the genes switch on and off.  We know that "
-                "stress can cause disease.We know that happiness fights disease. "
-                "If we can control our Genie.",
-                textAlign: TextAlign.justify,
-                style: buildTextStyle(),
+                  ],
+                ),
               ),
+
               const SizedBox(
                 height: 5,
               ),
@@ -250,19 +276,33 @@ class LearnPage extends StatelessWidget {
                 height: 10,
               ),
               imageWidget("assets/images/complete.gif"),
-
               const SizedBox(
                 height: 10,
               ),
-              Text(
-                "Even though the Genie won’t talk directly with you, there are ways to influence it. "
-                " You could repeat things over and over, which is how you learn to drive a car without "
-                "the need to think about it.  The Genie may listen to hypnosis sessions, if you are lucky."
-                "  The Genie can also be fooled, if you spend a long time  pretending to be a certain way until"
-                " the attitude sticks - the so-called \"fake it ‘til you make it\".",
-                textAlign: TextAlign.justify,
-                style: buildTextStyle(),
+              RichText(
+                text: TextSpan(
+                  text: "Even though the Genie won’t talk directly with you, there are ways to influence it. "
+                      " You could repeat things over and over, which is how you learn to drive a car without "
+                      "the need to think about it.  The Genie may listen to hypnosis sessions, if you are lucky."
+                      "  The Genie can also be fooled, if you spend a long ",
+                  style: richTextStyle(),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "time  pretending",
+                      style: richLineTextStyle(),
+                    ),
+                    TextSpan(
+                      text: " to be a certain way until"
+                          " the attitude sticks - the so-called \"fake it ‘til you make it\".",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+
+                  ],
+                ),
               ),
+
               const SizedBox(
                 height: 10,
               ),
@@ -272,32 +312,47 @@ class LearnPage extends StatelessWidget {
                 textAlign: TextAlign.justify,
                 style: buildTextStyle(),
               ),
-
               const SizedBox(
                 height: 20,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.h),
-                child: const Text(
+                child: Text(
                   "All we need to do is convince the Genie that"
-                  "our chosen method for life improvement will work.",
+                  "our chosen method for life improvement will work.\n",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w700,
+                  style: AppTextStyle.lex(
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),
-
               const SizedBox(
                 height: 5,
               ),
-              Text(
-                "Rather than spending a huge amount of time and effort meditating and visualising all of the things that we would like to happen, "
-                "over and over again, we simply accept that the Genie is running us.  So all we need to do is:",
-                textAlign: TextAlign.justify,
-                style: buildTextStyle(),
+              RichText(
+                text: TextSpan(
+                  text: "Rather than spending a huge amount of time and effort meditating and visualising all of the things that we would like to happen, "
+                      "over and over again, we simply accept that the Genie is running us.  ",
+                  style: richTextStyle(),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "So",
+                      style: richLineTextStyle(),
+                    ),
+                    TextSpan(
+                      text: " all we need to do is:",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+
+                  ],
+                ),
               ),
 
               const SizedBox(
@@ -305,19 +360,21 @@ class LearnPage extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.h),
-                child: const Text(
-                  "convince the Genie that"
+                child: Text(
+                  "\nconvince the Genie that"
                   " writing something down once in a special place"
-                  "will make it happen.",
+                  "will make it happen.\n",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w700,
+                  style: AppTextStyle.lex(
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),
-
               const SizedBox(
                 height: 10,
               ),
@@ -335,7 +392,7 @@ class LearnPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     '●	',
                     style: TextStyle(
@@ -350,22 +407,18 @@ class LearnPage extends StatelessWidget {
                     child: Text(
                       'The scientific reasons that have been presented here',
                       textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: buildTextStyle(),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 10.h,
+                height: 3.h,
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     '●	',
                     style: TextStyle(
@@ -378,23 +431,21 @@ class LearnPage extends StatelessWidget {
                   ),
                   Expanded(
                     child: Text(
-                      'A special place (The List in this app) for you to write down what you want and expect to happen',
+                      'A special place (The List in this app) for you to write down what you want and expect '
+                          'to happen',
                       textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: buildTextStyle(),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 10.h,
+                height: 3.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     '●	',
                     style: TextStyle(
@@ -409,20 +460,13 @@ class LearnPage extends StatelessWidget {
                     child: Text(
                       'A potent method to convince your Genie that this method works',
                       textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: buildTextStyle(),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 15.h,
-              ),
-
-              const SizedBox(
-                height: 5,
+                height: 20.h,
               ),
               Text(
                 "The first part of this potent method was the unusually high price that you paid for this app.  Scientists have proven that expensive pills are more effective ,"
@@ -469,11 +513,9 @@ class LearnPage extends StatelessWidget {
                 height: 15,
               ),
               imageWidget("assets/images/complete.gif"),
-
               const SizedBox(
                 height: 10,
               ),
-
               const SizedBox(
                 height: 5,
               ),
@@ -511,7 +553,6 @@ class LearnPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-
               Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
@@ -527,39 +568,53 @@ class LearnPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-
               Align(
                 alignment: Alignment.bottomLeft,
                 child: RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                       text: "This is",
-                      style: TextStyle(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
+                      style: AppTextStyle.lex(
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                       children: <TextSpan>[
                         TextSpan(
                           text: " reinforcement, ",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
+                          style: AppTextStyle.lex(style: itelicTextStyle()),
+                        ),
+                        TextSpan(
+                          text:
+                              "  where the Genie learns that what you write in The List ",
+                          style: AppTextStyle.lex(
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
                         TextSpan(
-                          text: "  where the Genie learns that what you write in The List will happen.\n",
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
+                          text: " will ",
+                          style: AppTextStyle.lex(
+                            style: itelicTextStyle(),
+                          ),
+                        ),
+                        TextSpan(
+                          text: " happen.\n",
+                          style: AppTextStyle.lex(
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
                       ]),
                 ),
               ),
-
               const SizedBox(
                 height: 5,
               ),
@@ -582,19 +637,7 @@ class LearnPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-
               elevatedButton(context),
-              // getButton(
-              //   "List",
-              //       () {
-              //     Navigator.pushReplacement(
-              //       context,
-              //       MaterialPageRoute(
-              //         builder: (context) => const HomePage(),
-              //       ),
-              //     );
-              //   },
-              // ),
               SizedBox(
                 height: 50.h,
               ),
@@ -602,6 +645,14 @@ class LearnPage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  TextStyle itelicTextStyle() {
+    return TextStyle(
+      fontSize: 12,
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.w700,
     );
   }
 
@@ -616,9 +667,31 @@ class LearnPage extends StatelessWidget {
   }
 
   TextStyle buildTextStyle() {
-    return const TextStyle(
-      fontSize: 14,
+    return AppTextStyle.lex(
+        style: TextStyle(
+      color: Colors.black,
+      fontSize: 12,
       fontWeight: FontWeight.w700,
+    ));
+  }
+
+  TextStyle richTextStyle() {
+    return AppTextStyle.lex(
+        style: TextStyle(
+      color: Colors.black,
+      fontSize: 10,
+      fontWeight: FontWeight.w700,
+    ));
+  }
+
+  TextStyle richLineTextStyle() {
+    return AppTextStyle.lex(
+      style: TextStyle(
+        color: Colors.black,
+        decoration: TextDecoration.underline,
+        fontSize: 10,
+        fontWeight: FontWeight.w700,
+      ),
     );
   }
 
@@ -656,34 +729,8 @@ class LearnPage extends StatelessWidget {
   }
 
   TextStyle buildTextStylee() {
-    return const TextStyle(fontSize: 25, color: Colors.white);
+    return AppTextStyle.lex(
+      style: TextStyle(fontSize: 25, color: Colors.white),
+    );
   }
-
-// Widget getButton(String txt, Function onTap) {
-//   return Center(
-//     child: InkWell(
-//       onTap: () async {
-//         onTap();
-//       },
-//       child: Container(
-//         height: 50.h,
-//         width: 200.w,
-//         decoration: BoxDecoration(
-//           color: Colors.blue,
-//           borderRadius: BorderRadius.circular(30),
-//         ),
-//         child: Center(
-//           child: Text(
-//             txt,
-//             style: TextStyle(
-//               fontSize: 24.w,
-//               fontWeight: FontWeight.w700,
-//               color: Colors.white,
-//             ),
-//           ),
-//         ),
-//       ),
-//     ),
-//   );
-// }
 }
