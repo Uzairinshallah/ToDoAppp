@@ -135,11 +135,10 @@ class LearnPage extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-
               RichText(
                 text: TextSpan(
                   text:
-                  " You can’t talk directly to the Genie - nobody can.  It stays hidden in the lamp.  The only way"
+                      " You can’t talk directly to the Genie - nobody can.  It stays hidden in the lamp.  The only way"
                       " to see what the Genie does is to look at what you have truly done in your life (not what you ",
                   style: richTextStyle(),
                   children: <TextSpan>[
@@ -147,17 +146,15 @@ class LearnPage extends StatelessWidget {
                       text: " think ",
                       style: itelicTextStyle(),
                     ),
-
                     TextSpan(
-                      text: "you have done), or asking friends to honestly say what sort of person you are.  If parts of your life haven’t gone as you would like or you are struggling to make certain things work however hard you try, it’s probably because your Genie isn’t coded for those results.  This explains why you can read hundreds of self-help books, but not be better for it, "
+                      text:
+                          "you have done), or asking friends to honestly say what sort of person you are.  If parts of your life haven’t gone as you would like or you are struggling to make certain things work however hard you try, it’s probably because your Genie isn’t coded for those results.  This explains why you can read hundreds of self-help books, but not be better for it, "
                           "because you aren’t really living what they preach - you need to convince your Genie",
                       style: richTextStyle(),
                     ),
-
                   ],
                 ),
               ),
-
               const SizedBox(
                 height: 15,
               ),
@@ -247,11 +244,9 @@ class LearnPage extends StatelessWidget {
                         style: richTextStyle(),
                       ),
                     ),
-
                   ],
                 ),
               ),
-
               const SizedBox(
                 height: 5,
               ),
@@ -281,7 +276,8 @@ class LearnPage extends StatelessWidget {
               ),
               RichText(
                 text: TextSpan(
-                  text: "Even though the Genie won’t talk directly with you, there are ways to influence it. "
+                  text:
+                      "Even though the Genie won’t talk directly with you, there are ways to influence it. "
                       " You could repeat things over and over, which is how you learn to drive a car without "
                       "the need to think about it.  The Genie may listen to hypnosis sessions, if you are lucky."
                       "  The Genie can also be fooled, if you spend a long ",
@@ -298,11 +294,9 @@ class LearnPage extends StatelessWidget {
                         style: richTextStyle(),
                       ),
                     ),
-
                   ],
                 ),
               ),
-
               const SizedBox(
                 height: 10,
               ),
@@ -336,7 +330,8 @@ class LearnPage extends StatelessWidget {
               ),
               RichText(
                 text: TextSpan(
-                  text: "Rather than spending a huge amount of time and effort meditating and visualising all of the things that we would like to happen, "
+                  text:
+                      "Rather than spending a huge amount of time and effort meditating and visualising all of the things that we would like to happen, "
                       "over and over again, we simply accept that the Genie is running us.  ",
                   style: richTextStyle(),
                   children: <TextSpan>[
@@ -350,11 +345,9 @@ class LearnPage extends StatelessWidget {
                         style: richTextStyle(),
                       ),
                     ),
-
                   ],
                 ),
               ),
-
               const SizedBox(
                 height: 10,
               ),
@@ -430,11 +423,24 @@ class LearnPage extends StatelessWidget {
                     width: 10,
                   ),
                   Expanded(
-                    child: Text(
-                      'A special place (The List in this app) for you to write down what you want and expect '
-                          'to happen',
-                      textAlign: TextAlign.justify,
-                      style: buildTextStyle(),
+                    child: RichText(
+                      text: TextSpan(
+                        text: "A special  ",
+                        style: richTextStyle(),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: "place",
+                            style: richLineTextStyle(),
+                          ),
+                          TextSpan(
+                            text:
+                                "(The List in this app) for you to write down what you want and expect to happen",
+                            style: AppTextStyle.lex(
+                              style: richTextStyle(),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -457,10 +463,24 @@ class LearnPage extends StatelessWidget {
                     width: 10,
                   ),
                   Expanded(
-                    child: Text(
-                      'A potent method to convince your Genie that this method works',
-                      textAlign: TextAlign.justify,
-                      style: buildTextStyle(),
+                    child: RichText(
+                      text: TextSpan(
+                        text: "A  ",
+                        style: richTextStyle(),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: "potent method",
+                            style: richLineTextStyle(),
+                          ),
+                          TextSpan(
+                            text:
+                                "to convince your Genie that this method works",
+                            style: AppTextStyle.lex(
+                              style: richTextStyle(),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -468,37 +488,122 @@ class LearnPage extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              Text(
-                "The first part of this potent method was the unusually high price that you paid for this app.  Scientists have proven that expensive pills are more effective ,"
-                " because our Genie thinks they are.  So your Genie already knows that this"
-                " app will be more effective, and will finally start working for you to make the changes"
-                " that you want in your life.\n",
-                textAlign: TextAlign.justify,
-                style: buildTextStyle(),
+              RichText(
+                text: TextSpan(
+                  text: "The first part of this ",
+                  style: richTextStyle(),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "potent method",
+                      style: richLineTextStyle(),
+                    ),
+                    TextSpan(
+                      text:
+                          " was the unusually high price that you paid for this app.  "
+                          "Scientists have proven that expensive pills are more effective , because our Genie thinks they are.  ",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+                    TextSpan(
+                      text: "So",
+                      style: AppTextStyle.lex(
+                        style: richLineTextStyle(),
+                      ),
+                    ),
+                    TextSpan(
+                      text: " your Genie already ",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+                    TextSpan(
+                      text: "Knows",
+                      style: AppTextStyle.lex(
+                        style: itelicTextStyle(),
+                      ),
+                    ),
+                    TextSpan(
+                      text:
+                          " that this app will be more effective, and will finally start working for you to"
+                          " make the changes that you want in your life.\n",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 5,
               ),
-              Text(
-                "The second part of this potent method steals the process that has misdirected your Genie,"
-                " but this time uses it for good.  Even though you can’t talk directly with your Genie, it does "
-                "take notice of the world.  If it experiences something enough, the Genie thinks this is normal,"
-                " and works towards it.  If you ask for something in a certain way and the thing always materialises,"
-                " the Genie will learn that what you ask for will appear.\n",
-                textAlign: TextAlign.justify,
-                style: buildTextStyle(),
+              RichText(
+                text: TextSpan(
+                  text: "The second part of this  ",
+                  style: richTextStyle(),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "potent method",
+                      style: richLineTextStyle(),
+                    ),
+                    TextSpan(
+                      text:
+                          " steals the process that has misdirected your Genie, but this time uses it for good.  Even though you can’t talk directly with your Genie, it does take notice of the world.  If it experiences something enough, the Genie thinks this is normal, and works towards it.  If you ask for something in a certain way and the "
+                          "thing always materialises, the Genie will learn that what you ask for will appear.",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 5,
               ),
-              Text(
-                "The third part of the potent method uses the same approach that has been used by Shaolin monks for "
-                "centuries to perform their amazing feats of mental and physical prowess.  The monks face a simple"
-                " task, which becomes increasingly difficult until it takes an almost supernatural skill to complete. "
-                " You train your Genie in the same way.  To begin, you ask for things that you expect and know will "
-                "happen easily.  The Genie learns that this works, then will accept increasingly challenging wishes.\n",
-                textAlign: TextAlign.justify,
-                style: buildTextStyle(),
+              RichText(
+                text: TextSpan(
+                  text: "The third part of the  ",
+                  style: richTextStyle(),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "potent method",
+                      style: itelicTextStyle(),
+                    ),
+                    TextSpan(
+                      text:
+                          " uses the same approach that has been used by Shaolin monks for centuries to perform their amazing feats of mental and physical prowess.  The monks face a simple task, which becomes increasingly difficult until it takes an almost supernatural skill to complete. "
+                          " You train your Genie in the same way.  To begin, you ask for things that you ",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+                    TextSpan(
+                      text: " expect ",
+                      style: AppTextStyle.lex(
+                        style: itelicTextStyle(),
+                      ),
+                    ),
+                    TextSpan(
+                      text: " and ",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+                    TextSpan(
+                      text: "will ",
+                      style: AppTextStyle.lex(
+                        style: itelicTextStyle(),
+                      ),
+                    ),
+                    TextSpan(
+                      text:
+                          "will happen easily.  The Genie learns that this works, then will accept increasingly challenging wishes.",
+                      style: AppTextStyle.lex(
+                        style: richTextStyle(),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 5,
