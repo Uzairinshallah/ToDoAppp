@@ -24,7 +24,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
     return AlertDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       titlePadding: const EdgeInsets.all(0),
       content: SingleChildScrollView(
         child: Column(
@@ -57,7 +57,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                         width: 100.w,
                         decoration: BoxDecoration(
                           color: CColors.themeColor,
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(8),
                         ),
                         child: Center(
                           child: Text(
@@ -88,7 +88,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                         width: 100.w,
                         decoration: BoxDecoration(
                           color: CColors.themeColor,
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(8),
                         ),
                         child: Center(
                           child: Text(
