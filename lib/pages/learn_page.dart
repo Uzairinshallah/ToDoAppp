@@ -718,9 +718,7 @@ class LearnPage extends StatelessWidget {
                           "Begin by writing a simple Divination - a thing that you know will happen.  For example “I will watch a leaf fall” in the autumn or “I will run 1 mile in "
                           "6 minutes” when your average time for 1 mile is 6 minutes.  Remember… your Genie is watching. \n\n"
                           "To write the Divination, click on this icon at the bottom of the screen:",
-                      style: AppTextStyle.lex(
-                        style: richTextStyle(),
-                      ),
+                      style: richTextStyle(),
                     ),
                   ],
                 ),
