@@ -130,8 +130,8 @@ class _HomePageState extends State<HomePage> {
 
   void createNewTask() {
     int recentIndex = db.toDoList.length - 1;
-    print(recentIndex);
-    if(recentIndex <= 0 ){
+
+    if (recentIndex == -1) {
       showDialog(
         context: context,
         builder: (context) {
@@ -148,9 +148,18 @@ class _HomePageState extends State<HomePage> {
     var completed = db.toDoList[recentIndex][1];
     if (!completed) {
       Functions.showSnackBar(context, "Please fulfil your previous task");
-      return;
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return DialogBox(
+            controller: _controller,
+            onSave: saveNewTask,
+            onCancel: () => Navigator.of(context).pop(),
+          );
+        },
+      );
     }
-
   }
 
   // delete task
@@ -228,7 +237,7 @@ class _HomePageState extends State<HomePage> {
 
   MaterialColor buttonColor() {
     int recentIndex = db.toDoList.length - 1;
-    if(recentIndex < 0){
+    if (recentIndex < 0) {
       recentIndex = 0;
       return Colors.pink;
     }

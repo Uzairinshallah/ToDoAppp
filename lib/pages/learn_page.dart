@@ -222,7 +222,7 @@ class LearnPage extends StatelessWidget {
                             " teaches your Genie to believe through life experience",
                         style: AppTextStyle.lex(
                           style: const TextStyle(
-                            fontSize: 12,
+                            fontSize: 11,
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
                           ),
@@ -408,7 +408,7 @@ class LearnPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.h),
                 child: Text(
-                  "\nconvince the Genie that"
+                  "\nConvince the Genie that"
                   " writing something down once in a special place"
                   "will make it happen.\n",
                   textAlign: TextAlign.center,
@@ -793,7 +793,7 @@ class LearnPage extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                           text: " reinforcement, ",
-                          style: AppTextStyle.lex(style: itelicTextStyle()),
+                          style: itelicTextStyle(),
                         ),
                         TextSpan(
                           text:
@@ -1021,9 +1021,9 @@ class LearnPage extends StatelessWidget {
   TextStyle itelicTextStyle() {
     return AppTextStyle.lex(
       style: const TextStyle(
-        fontSize: 12,
+        fontSize: 11,
         fontStyle: FontStyle.italic,
-        fontWeight: FontWeight.w700,
+        // fontWeight: FontWeight.w700,
       ),
     );
   }
@@ -1042,7 +1042,7 @@ class LearnPage extends StatelessWidget {
     return AppTextStyle.lex(
         style: const TextStyle(
       color: Colors.black,
-      fontSize: 12,
+      fontSize: 11,
       fontWeight: FontWeight.w700,
     ));
   }
@@ -1051,7 +1051,7 @@ class LearnPage extends StatelessWidget {
     return AppTextStyle.lex(
         style: const TextStyle(
       color: Colors.black,
-      fontSize: 10,
+      fontSize: 9,
       fontWeight: FontWeight.w700,
     ));
   }
@@ -1071,7 +1071,7 @@ class LearnPage extends StatelessWidget {
         color: Colors.black,
         decoration: TextDecoration.underline,
         fontSize: 10,
-        fontWeight: FontWeight.w700,
+        // fontWeight: FontWeight.w700,
       ),
     );
   }
