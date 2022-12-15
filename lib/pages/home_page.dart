@@ -130,7 +130,8 @@ class _HomePageState extends State<HomePage> {
 
   void createNewTask() {
     int recentIndex = db.toDoList.length - 1;
-    if(recentIndex <= 0){
+    print(recentIndex);
+    if(recentIndex <= 0 ){
       showDialog(
         context: context,
         builder: (context) {
