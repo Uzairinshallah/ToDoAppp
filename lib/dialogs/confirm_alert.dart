@@ -22,7 +22,7 @@ class ConfirmDeviation extends StatelessWidget {
         children: [
           // get user input
 
-          Text("Are you sure to add this Divination?", style: TextStyle(
+          Text("Is this divination truly what you want and expect?", style: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 18,
           ),),

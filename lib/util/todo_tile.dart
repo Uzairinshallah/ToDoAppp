@@ -36,12 +36,6 @@ class _ToDoTileState extends State<ToDoTile> {
         ),
         child: Row(
           children: [
-            // checkbox
-            // Checkbox(
-            //   value: widget.taskCompleted,
-            //   onChanged: widget.onChanged,
-            //   activeColor: Colors.black,
-            // ),
             Expanded(
               flex: 1,
               child: GestureDetector(
@@ -110,6 +104,9 @@ class _ToDoTileState extends State<ToDoTile> {
   String getImagePath(bool complete) {
     if (complete) {
       return "assets/images/complete.gif";
+    }
+    if( widget.taskName.trim().isNotEmpty ){
+      return "assets/images/complete_text.gif";
     }
     return "assets/images/incomplete.gif";
   }

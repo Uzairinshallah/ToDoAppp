@@ -38,76 +38,8 @@ class _HomePageState extends State<HomePage> {
   final _controller = TextEditingController();
 
   void checkBoxChanged(bool? value, int index) {
-    setState(
-      () {
-        if (db.toDoList[index][1] == false) {
-          debugPrint("length 2 : ${db.toDoList.length} ");
-          player.play(AssetSource("audio.mp3"));
-          Timer(
-            const Duration(seconds: 1),
-            () {
-              debugPrint("length: ${db.toDoList.length} ");
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const RedScreen(
-                    color: Color(0xff6b009c),
-                  ),
-                ),
-              ).then(
-                (value) {
-                  if (db.toDoList.length == 49) {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const ListCompleteDialog();
-                      },
-                    );
-                  }
-                },
-              );
-            },
-          );
-        }
-        db.toDoList[index][1] = true;
-
-        // db.toDoList[index][1] = !taskValue(index);
-      },
-    );
-    db.updateDataBase();
-  }
-
-  void saveNewTask() {
-    if (_controller.text.trim().isEmpty) {
-      return;
-    }
-    int count = 0;
-    setState(() {
-      for (int i = 0; i <= db.toDoList.length; i++) {
-        count++;
-      }
-
-      if (count == 1) {
-        player.play(AssetSource("audio.mp3"));
-        db.toDoList.add([_controller.text, false]);
-        _controller.clear();
-        return;
-      }
-      if (db.toDoList[count - 2][1] == false) {
-        Functions.showSnackBar(context, "Please fulfil your previous task");
-        _controller.clear();
-      } else {
-        player.play(AssetSource("audio.mp3"));
-
-        db.toDoList.add([_controller.text, false]);
-
-        _controller.clear();
-      }
-    });
-    Navigator.of(context).pop();
-    db.updateDataBase();
-
-    Timer(const Duration(seconds: 1), () {
+    if (db.toDoList[index][1] == false) {
+      debugPrint("length 2 : ${db.toDoList.length} ");
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -116,16 +48,64 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       );
+      player.play(AssetSource("audio.mp3")).whenComplete(() {
+        if (db.toDoList.length == 49) {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return const ListCompleteDialog();
+            },
+          );
+        }
+        setState(() {
+          db.toDoList[index][1] = true;
+          db.updateDataBase();
+        });
+      },);
+
+    }
+
+  }
+
+  void saveNewTask() async {
+    if (_controller.text.trim().isEmpty) {
+      return;
+    }
+    int count = db.toDoList.length;
+
+    if (count < 1) {
+      await addTask();
+    } else {
+      if (db.toDoList[count - 1][1] == false) {
+        Functions.showSnackBar(
+            context, "Please fulfil your current Divination");
+        _controller.clear();
+      } else {
+        await addTask();
+      }
+    }
+
+    db.updateDataBase();
+  }
+
+  Future<void> addTask() async {
+    Navigator.of(context).pop();
+    Navigator.of(context).pop();
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const RedScreen(
+          color: Color(0xff6b009c),
+        ),
+      ),
+    );
+    await player.play(AssetSource("audio.mp3")).whenComplete(() => {
+    // Navigator.of(context).pop(),
+        db.toDoList.add([_controller.text, false]),
+    _controller.clear(),
+    setState(() {}),
     });
-    //
-    // Future.delayed(const Duration(microseconds: 50)).then((value) {
-    //   Navigator.pushReplacement(
-    //     context,
-    //     MaterialPageRoute(
-    //       builder: (context) => RedScreen(),
-    //     ),
-    //   );
-    // });
+
   }
 
   void createNewTask() {
@@ -147,7 +127,7 @@ class _HomePageState extends State<HomePage> {
 
     var completed = db.toDoList[recentIndex][1];
     if (!completed) {
-      Functions.showSnackBar(context, "Please fulfil your previous task");
+      Functions.showSnackBar(context, "Please fulfil your current Divination");
     } else {
       showDialog(
         context: context,
@@ -220,12 +200,28 @@ class _HomePageState extends State<HomePage> {
     return FloatingActionButton(
         backgroundColor: buttonColor(),
         onPressed: createNewTask,
-        child: const Image(
-          image: AssetImage("assets/images/add.png"),
+        clipBehavior: Clip.antiAlias,
+        child: Image(
+          image: AssetImage(getLampImagePath()),
         )
 
         // child: const ImageIcon(AssetImage("assets/images/add.png")),
         );
+  }
+
+  String getLampImagePath() {
+    if (db.toDoList.isNotEmpty) {
+      int recentIndex = db.toDoList.length - 1;
+      if (recentIndex < 0) {
+        recentIndex = 0;
+        return "assets/images/lamp_grey.gif";
+      }
+      var completed = db.toDoList[recentIndex][1];
+      if (!completed) {
+        return "assets/images/lamp_grey.gif";
+      }
+    }
+    return "assets/images/add.gif";
   }
 
   int itemCount() {
@@ -293,7 +289,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget elevatedButton() {
     return Card(
-      margin: EdgeInsets.zero,
+      margin: EdgeInsets.all(12),
       clipBehavior: Clip.antiAlias,
       elevation: 5,
       child: GestureDetector(
