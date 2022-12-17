@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.neural_genie">
+    package="com.app.neural_genie">
    <application
         android:label="neural_genie"
         android:name="${applicationName}"
