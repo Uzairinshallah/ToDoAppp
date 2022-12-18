@@ -38,10 +38,13 @@ class _HomePageState extends State<HomePage> {
 
   final _controller = TextEditingController();
 
-  void checkBoxChanged(bool? value, int index) {
+  void checkBoxChanged(bool? value, int index) async {
     if (db.toDoList[index][1] == false) {
       debugPrint("length 2 : ${db.toDoList.length} ");
-      Navigator.push(
+      player.play(AssetSource("audio.mp3")).whenComplete(
+            () {},
+          );
+      await Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => const RedScreen(
@@ -49,22 +52,19 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       );
-      player.play(AssetSource("audio.mp3")).whenComplete(
-        () {
-          if (db.toDoList.length == 49) {
-            showDialog(
-              context: context,
-              builder: (context) {
-                return const ListCompleteDialog();
-              },
-            );
-          }
-          setState(() {
-            db.toDoList[index][1] = true;
-            db.updateDataBase();
-          });
-        },
-      );
+      debugPrint("completed");
+      if (db.toDoList.length == 49) {
+        showDialog(
+          context: context,
+          builder: (context) {
+            return const ListCompleteDialog();
+          },
+        );
+      }
+      setState(() {
+        db.toDoList[index][1] = true;
+        db.updateDataBase();
+      });
     }
   }
 
@@ -328,7 +328,7 @@ class _HomePageState extends State<HomePage> {
             ? const SizedBox()
             : Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child:  Text(
+                child: Text(
                   "You Have Successfully Added \n Your 49 Divinations",
                   textAlign: TextAlign.center,
                   style: AppTextStyle.nunito(

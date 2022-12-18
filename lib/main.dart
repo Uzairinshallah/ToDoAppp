@@ -5,10 +5,15 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:neural_genie/pages/splash_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'data/database.dart';
+
 void main() async {
   await Hive.initFlutter();
-  await Hive.openBox('mybox');
- // await box.clear();
+ var box =  await Hive.openBox('mybox');
+  await box.clear();
+  ToDoDataBase db = ToDoDataBase();
+  db.toDoList = List.generate(48, (index) =>["$index", true] );
+  db.updateDataBase();
   runApp(
       DevicePreview(
         enabled: kDebugMode,

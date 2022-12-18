@@ -22,11 +22,11 @@ class Splash extends State<RedScreen> {
     Timer(
       const Duration(seconds: 3),
       () {
-        // Navigator.of(context).pop();
-        Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
-            (route) => false);
+        Navigator.of(context).pop();
+        // Navigator.pushAndRemoveUntil(
+        //     context,
+        //     MaterialPageRoute(builder: (context) => const HomePage()),
+        //     (route) => false);
       },
     );
 
