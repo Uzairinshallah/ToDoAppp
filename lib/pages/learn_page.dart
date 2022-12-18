@@ -56,48 +56,12 @@ class _LearnPageState extends State<LearnPage> {
                       color: Color(0xff6b009c),
                     ),
                   )),
-              SizedBox(
-                height: 30.h,
-              ),
               Markdown(
                 shrinkWrap: true,
                 controller: ScrollController(),
                 selectable: true,
                 data:
-                    '''<p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 0; ALERTS: 9.</p>
-<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
-
-<p style="color: red; font-weight: bold">Links to alert messages:</p><a href="#gdcalert1">alert1</a>
-<a href="#gdcalert2">alert2</a>
-<a href="#gdcalert3">alert3</a>
-<a href="#gdcalert4">alert4</a>
-<a href="#gdcalert5">alert5</a> 
-<a href="#gdcalert6">alert6</a> 
-<a href="#gdcalert7">alert7</a>
-<a href="#gdcalert8">alert8</a>
-<a href="#gdcalert9">alert9</a>
-
-<p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
-
-
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.gif). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.gif "image_tooltip")
-
-
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.gif). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/add.gif "image_tooltip")
-
-
-
-
+                    '''
 * Do you find that your life is without direction and meaning, and that no matter how hard you try, you can’t get what you want?
 * Have you ever wondered why some people seem to be born lucky and attract good things to themselves?
 
@@ -113,17 +77,11 @@ Now is the time for you to fight back, catch up, and take control of your Genie 
 
 The Neural Genie approach **teaches your Genie to believe through life experience**, with almost no effort from you.
 
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.gif). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.gif "image_tooltip")
-
+![alt_text](resource:assets/images/complete.gif#300x80 "image_tooltip" )
 
 Here are some benefits of controlling our Genie:
 
-We’re told that we will be happy if we are successful, but in fact it’s the other way around[^3].  Happiness leads to success.  And happiness comes from within the mind.  _If_ we can control our Genie.
+We’re told that we will be happy if we are successful, but in fact it’s the other way around. Happiness leads to success.  And happiness comes from within the mind.  _If_ we can control our Genie.
 
 We’re told that our genes determine what our bodies become, how we behave, and which diseases we are likely to succumb to - as if we are completely helpless and must accept what we have.  But genes aren’t the full story.  The signals that our brain sends out can indirectly determine which parts of the genes switch on and off.  We know that stress can cause disease.  We know that happiness fights disease.  _If_ we can control our Genie.
 
@@ -132,11 +90,7 @@ We’re told that some people are naturally better at spotting opportunities, or
 People are trying to change all aspects of their lives - careers, health, relationships - using many different methods.  But if you can just influence the Genie, everything else will simply follow.
 
 
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.gif). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.gif "image_tooltip")
+![alt_text](resource:assets/images/complete.gif#300x80 "image_tooltip" )
 
 
 Even though the Genie won’t talk directly with you, there are ways to influence it.  You could repeat things over and over, which is how you learn to drive a car without the need to think about it.  The Genie may listen to hypnosis sessions, if you are lucky.  The Genie can also be fooled, if you spend a long time  pretending to be a certain way until the attitude sticks - the so-called "fake it ‘til you make it".
@@ -173,10 +127,7 @@ While this seems difficult, you can do it using a beautifully simple  process th
 
 
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.gif). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.gif "image_tooltip")
+![alt_text](resource:assets/images/complete.gif#300x80 "image_tooltip" )
 
 
 There are 49 blank spaces in The List.  (There is a good reason for limiting the number).
@@ -188,23 +139,14 @@ Begin by writing a simple Divination - a thing that you _know_ will happen.  For
 To write the Divination, click on this icon at the bottom of the screen:
 
 
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.gif). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.gif "image_tooltip")
+![alt_text](resource:assets/images/lamp_grey.gif#300x80 "image_tooltip" )
 
 
 Once submitted, you cannot change the Divination, so be sure to write it how you want it to be (careful what you wish for...) and that it is truly what you want.  Don’t worry, the Genie knows what you _really_ want, even if it’s difficult for you to write it clearly.  You do not need to do anything else in a special or particular way.  Writing the wish in The List  is all that is needed.
 
 Your Genie will now be primed to notice the Divination when it occurs, and will bring it to your attention.  Mark it as complete by clicking the icon to the left of the Divination:
 
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.gif). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.gif "image_tooltip")
+![alt_text](resource:assets/images/complete_text.gif#300x80 "image_tooltip" )
 
 
 The icon will become illuminated:
@@ -214,7 +156,7 @@ The icon will become illuminated:
 <p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.gif). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image8.gif "image_tooltip")
+![alt_text](resource:assets/images/complete.gif#300x80 "image_tooltip" )
 
 
 This is _reinforcement_, where the Genie learns that what you write in The List _will_ happen.  
@@ -222,10 +164,6 @@ This is _reinforcement_, where the Genie learns that what you write in The List 
 The fulfilment of one Divination will unlock the next.  Begin with perhaps ten simple things, then continue to write increasingly ambitious Divinations that you _expect_ and _want_ to happen.  Allow the Genie to bring them to your attention as you go about your normal life, and mark them as complete when they occur.  There is no limit to how quickly or slowly you achieve your Divinations.  You will know… you will feel the guidance of your Genie.
 
 That’s all there is to it.  The method works best if it is kept as simple as possible, with few rigid rules.  There’s no need to work hard.  Your Genie has been working hard all your life, programmed by the world to produce results that you didn’t necessarily ask for.  It’s now time to let your Genie work hard doing things that you <span style="text-decoration:underline;">have</span> asked for…
-
-
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.gif). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
 ![alt_text](images/image9.gif "image_tooltip")

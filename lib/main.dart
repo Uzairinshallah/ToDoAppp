@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   await Hive.initFlutter();
-  // var box = await Hive.openBox('mybox');
+  await Hive.openBox('mybox');
  // await box.clear();
   runApp(const MyApp());
 }
