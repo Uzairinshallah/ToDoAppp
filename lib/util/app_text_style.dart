@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 class AppTextStyle {
   static TextStyle molengo({TextStyle? style}) =>
       GoogleFonts.molengo(textStyle: style);
+
   static TextStyle quickSand({TextStyle? style}) =>
       GoogleFonts.quicksand(textStyle: style);
 
   static TextStyle lex({TextStyle? style}) =>
       GoogleFonts.lexend(textStyle: style);
 
+  static TextStyle nunito({TextStyle? style}) =>
+      GoogleFonts.nunito(textStyle: style);
 
 }

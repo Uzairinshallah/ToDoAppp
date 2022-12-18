@@ -1,12 +1,13 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neural_genie/pages/learn_page.dart';
+import 'package:neural_genie/util/app_text_style.dart';
 
 import '../util/ccolors.dart';
 import 'home_page.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   Splash createState() => Splash();
 }
@@ -27,11 +28,6 @@ class Splash extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var assetsImage = const AssetImage('assets/images/splashScreen.jpg');
-    var image = Image(
-      image: assetsImage,
-      height: 400.h,
-    );
 
     return Scaffold(
       body: Center(
@@ -45,13 +41,14 @@ class Splash extends State<SplashScreen> {
               width: 150,
               height: 100,
             ),
-            const Text(
+            Text(
               "Neural Genie",
-              style: TextStyle(
+              style: AppTextStyle.nunito(
+                  style: const TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w500,
                 color: Color(0xff6b009c),
-              ),
+              )),
             ),
             const SizedBox(
               height: 50,
@@ -66,7 +63,7 @@ class Splash extends State<SplashScreen> {
                     context,
                     MaterialPageRoute(
                       builder: (ctx) {
-                        return LearnPage();
+                        return const LearnPage();
                       },
                     ),
                   );
@@ -126,6 +123,7 @@ class Splash extends State<SplashScreen> {
   }
 
   TextStyle buildTextStyle() {
-    return const TextStyle(fontSize: 25, color: Colors.white);
+    return AppTextStyle.nunito(
+        style: const TextStyle(fontSize: 25, color: Colors.white));
   }
 }

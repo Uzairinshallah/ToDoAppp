@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-
-import '../data/database.dart';
+import 'package:neural_genie/util/app_text_style.dart';
 import '../pages/confirm_alert.dart';
-import 'functions.dart';
 
 class ToDoTile extends StatefulWidget {
   final String taskName;
   final int index;
   final bool taskCompleted;
-  Function(bool?) onChanged;
-  Function(BuildContext)? deleteFunction;
+  final Function(bool?) onChanged;
+  final Function(BuildContext)? deleteFunction;
 
-  ToDoTile({
+  const ToDoTile({
     super.key,
     required this.taskName,
     required this.index,
@@ -63,6 +61,12 @@ class _ToDoTileState extends State<ToDoTile> {
               child: Center(
                 child: Text(
                   widget.index.toString(),
+                  style: AppTextStyle.nunito(
+                      style: TextStyle(
+                    decoration: widget.taskCompleted
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                  )),
                 ),
               ),
             ),
@@ -70,11 +74,12 @@ class _ToDoTileState extends State<ToDoTile> {
               flex: 5,
               child: Text(
                 widget.taskName,
-                style: TextStyle(
+                style: AppTextStyle.nunito(
+                    style: TextStyle(
                   decoration: widget.taskCompleted
                       ? TextDecoration.lineThrough
                       : TextDecoration.none,
-                ),
+                )),
               ),
             ),
           ],
@@ -84,13 +89,13 @@ class _ToDoTileState extends State<ToDoTile> {
   }
 
   void completeTask(BuildContext context) {
-    if( widget.taskCompleted ){
+    if (widget.taskCompleted) {
       return;
     }
     if (widget.taskName.trim().isNotEmpty) {
       showDialog(
         context: context,
-        builder: (context) => ConfirmAlert(),
+        builder: (context) => const ConfirmAlert(),
       ).then(
         (val) async {
           if (val == true) {
@@ -105,7 +110,7 @@ class _ToDoTileState extends State<ToDoTile> {
     if (complete) {
       return "assets/images/complete.gif";
     }
-    if( widget.taskName.trim().isNotEmpty ){
+    if (widget.taskName.trim().isNotEmpty) {
       return "assets/images/complete_text.gif";
     }
     return "assets/images/incomplete.gif";

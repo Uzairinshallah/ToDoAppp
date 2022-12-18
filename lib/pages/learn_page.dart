@@ -1,9 +1,7 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:footer/footer.dart';
 import 'package:hive/hive.dart';
 import 'package:neural_genie/util/app_text_style.dart';
 
@@ -12,7 +10,7 @@ import '../util/ccolors.dart';
 import 'home_page.dart';
 
 class LearnPage extends StatefulWidget {
-  LearnPage({Key? key}) : super(key: key);
+  const LearnPage({Key? key}) : super(key: key);
 
   @override
   State<LearnPage> createState() => _LearnPageState();
@@ -51,7 +49,7 @@ class _LearnPageState extends State<LearnPage> {
                 height: 100,
               ),
               Text("Neural Genie",
-                  style: AppTextStyle.lex(
+                  style: AppTextStyle.nunito(
                     style: const TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.w500,
@@ -266,15 +264,6 @@ That’s all there is to it.  The method works best if it is kept as simple as p
     );
   }
 
-  TextStyle itelicTextStyle() {
-    return AppTextStyle.lex(
-      style: const TextStyle(
-        fontSize: 11,
-        fontStyle: FontStyle.italic,
-        // fontWeight: FontWeight.w700,
-      ),
-    );
-  }
 
   Widget imageWidget(String imagePath) {
     return Center(
@@ -286,46 +275,10 @@ That’s all there is to it.  The method works best if it is kept as simple as p
     );
   }
 
-  TextStyle buildTextStyle() {
-    return AppTextStyle.lex(
-        style: const TextStyle(
-      color: Colors.black,
-      fontSize: 11,
-      fontWeight: FontWeight.w700,
-    ));
-  }
 
-  TextStyle richTextStyle() {
-    return AppTextStyle.lex(
-        style: const TextStyle(
-      color: Colors.black,
-      fontSize: 9,
-      fontWeight: FontWeight.w700,
-    ));
-  }
-
-  TextStyle richTextStyleFooter() {
-    return AppTextStyle.quickSand(
-      style: TextStyle(
-        color: Colors.black,
-        fontSize: 10,
-      ),
-    );
-  }
-
-  TextStyle richLineTextStyle() {
-    return AppTextStyle.lex(
-      style: const TextStyle(
-        color: Colors.black,
-        decoration: TextDecoration.underline,
-        fontSize: 10,
-        // fontWeight: FontWeight.w700,
-      ),
-    );
-  }
 
   Widget elevatedButton(BuildContext context) {
-    print(db.toDoList.length);
+    debugPrint(db.toDoList.length.toString());
 
     return Column(
       children: [
@@ -363,7 +316,7 @@ That’s all there is to it.  The method works best if it is kept as simple as p
           height: 20.h,
         ),
         (db.toDoList.length <= 49)
-            ? SizedBox()
+            ? const SizedBox()
             : Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: const Text(
@@ -380,7 +333,7 @@ That’s all there is to it.  The method works best if it is kept as simple as p
   }
 
   TextStyle buildTextStylee() {
-    return AppTextStyle.lex(
+    return AppTextStyle.nunito(
       style: const TextStyle(fontSize: 25, color: Colors.white),
     );
   }

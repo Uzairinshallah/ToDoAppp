@@ -1,12 +1,13 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neural_genie/util/app_text_style.dart';
 
 import '../util/ccolors.dart';
 import '../util/functions.dart';
 
 class ConfirmAlert extends StatefulWidget {
-  ConfirmAlert({
+  const ConfirmAlert({
     Key? key,
   }) : super(key: key);
 
@@ -15,7 +16,7 @@ class ConfirmAlert extends StatefulWidget {
 }
 
 class _ConfirmAlertState extends State<ConfirmAlert> {
-  var screenWidth, screenHeight;
+  late double screenWidth, screenHeight;
   var text = TextEditingController();
   final player = AudioPlayer();
 
@@ -31,12 +32,13 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Are you sure that this is complete?",
-              style: TextStyle(
+              style: AppTextStyle.nunito(
+                  style: const TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 18,
-              ),
+              )),
             ),
             getHeight(20.h),
             Row(
@@ -62,10 +64,12 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                         child: Center(
                           child: Text(
                             "Yes",
-                            style: TextStyle(
-                              fontSize: 24.w,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
+                            style: AppTextStyle.nunito(
+                              style: TextStyle(
+                                fontSize: 24.w,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -73,7 +77,9 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                     ),
                   ),
                 ),
-                SizedBox(width: 10.w,),
+                SizedBox(
+                  width: 10.w,
+                ),
                 InkWell(
                   onTap: () async {
                     Navigator.of(context).pop();
@@ -93,11 +99,12 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                         child: Center(
                           child: Text(
                             "No",
-                            style: TextStyle(
+                            style: AppTextStyle.nunito(
+                                style: TextStyle(
                               fontSize: 24.w,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
-                            ),
+                            )),
                           ),
                         ),
                       ),
@@ -112,13 +119,9 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
     );
   }
 
-
-
   getHeight(double h) {
     return SizedBox(
       height: h,
     );
   }
-
-
 }

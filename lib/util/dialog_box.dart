@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neural_genie/util/app_text_style.dart';
 
 import '../dialogs/confirm_alert.dart';
 import 'ccolors.dart';
-import 'my_button.dart';
 
 class DialogBox extends StatelessWidget {
   final TextEditingController controller;
@@ -27,9 +27,11 @@ class DialogBox extends StatelessWidget {
           // get user input
           TextField(
             controller: controller,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
+            style: AppTextStyle.nunito(),
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
               hintText: "Tell me your next Divination",
+              hintStyle: AppTextStyle.nunito(),
             ),
           ),
 
@@ -43,7 +45,7 @@ class DialogBox extends StatelessWidget {
               // save button
               InkWell(
                 // onTap: onSave,
-                onTap: (){
+                onTap: () {
                   showDialog(
                     context: context,
                     builder: (context) {
@@ -64,11 +66,12 @@ class DialogBox extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "Commit",
-                      style: TextStyle(
+                      style: AppTextStyle.nunito(
+                          style: TextStyle(
                         fontSize: 24.w,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
-                      ),
+                      )),
                     ),
                   ),
                 ),
@@ -88,10 +91,12 @@ class DialogBox extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "Cancel",
-                      style: TextStyle(
-                        fontSize: 24.w,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
+                      style: AppTextStyle.nunito(
+                        style: TextStyle(
+                          fontSize: 24.w,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),

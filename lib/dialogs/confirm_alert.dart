@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neural_genie/util/app_text_style.dart';
 
 import '../util/ccolors.dart';
 
@@ -22,17 +23,19 @@ class ConfirmDeviation extends StatelessWidget {
         children: [
           // get user input
 
-          Text("Is this divination truly what you want and expect?", style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 18,
-          ),),
-          SizedBox(height:20.h),
+          Text(
+            "Is this divination truly what you want and expect?",
+            style: AppTextStyle.nunito(
+                style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 12.sp,
+            )),
+          ),
+          SizedBox(height: 20.h),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // save button
-
               InkWell(
                 onTap: onSave,
                 child: Container(
@@ -45,11 +48,12 @@ class ConfirmDeviation extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "Yes",
-                      style: TextStyle(
+                      style: AppTextStyle.nunito(
+                          style: TextStyle(
                         fontSize: 24.w,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
-                      ),
+                      )),
                     ),
                   ),
                 ),
@@ -69,11 +73,12 @@ class ConfirmDeviation extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "No",
-                      style: TextStyle(
+                      style: AppTextStyle.nunito(
+                          style: TextStyle(
                         fontSize: 24.w,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
-                      ),
+                      )),
                     ),
                   ),
                 ),

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:neural_genie/pages/red_page.dart';
+import 'package:neural_genie/util/app_text_style.dart';
 import '../data/database.dart';
 import '../dialogs/list_complete_dialog.dart';
 import '../util/ccolors.dart';
@@ -274,11 +275,12 @@ class _HomePageState extends State<HomePage> {
           child: Center(
             child: Text(
               txt,
-              style: TextStyle(
+              style: AppTextStyle.nunito(
+                  style: TextStyle(
                 fontSize: 24.w,
                 fontWeight: FontWeight.w700,
                 color: Colors.white,
-              ),
+              )),
             ),
           ),
         ),
@@ -290,7 +292,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: [
         Card(
-          margin: EdgeInsets.all(12),
+          margin: const EdgeInsets.all(12),
           clipBehavior: Clip.antiAlias,
           elevation: 15,
           child: GestureDetector(
@@ -299,7 +301,7 @@ class _HomePageState extends State<HomePage> {
                 context,
                 MaterialPageRoute(
                   builder: (ctx) {
-                    return LearnPage();
+                    return const LearnPage();
                   },
                 ),
               );
@@ -323,16 +325,17 @@ class _HomePageState extends State<HomePage> {
           height: 30.h,
         ),
         (db.toDoList.length <= 49)
-            ? SizedBox()
+            ? const SizedBox()
             : Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: const Text(
+                child:  Text(
                   "You Have Successfully Added \n Your 49 Divinations",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: AppTextStyle.nunito(
+                      style: const TextStyle(
                     fontSize: 20,
                     color: Colors.black,
-                  ),
+                  )),
                 ),
               ),
       ],
@@ -340,6 +343,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   TextStyle buildTextStyle() {
-    return const TextStyle(fontSize: 25, color: Colors.white);
+    return AppTextStyle.nunito(
+        style: TextStyle(
+      fontSize: 24.w,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ));
   }
 }

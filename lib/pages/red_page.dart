@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'home_page.dart';
 
 class RedScreen extends StatefulWidget {
@@ -27,7 +25,7 @@ class Splash extends State<RedScreen> {
         // Navigator.of(context).pop();
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => HomePage()),
+            MaterialPageRoute(builder: (context) => const HomePage()),
             (route) => false);
       },
     );
