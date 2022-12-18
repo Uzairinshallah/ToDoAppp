@@ -324,21 +324,26 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           height: 30.h,
         ),
-        (db.toDoList.length <= 49)
+        (db.toDoList.length != 49)
             ? const SizedBox()
             : Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: Text(
-                  "You Have Successfully Added \n Your 49 Divinations",
-                  textAlign: TextAlign.center,
-                  style: AppTextStyle.nunito(
-                      style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                  )),
-                ),
+                child: text(),
               ),
       ],
+    );
+  }
+
+  Widget text() {
+    return Text(
+      // "You Have Successfully Added \n Your 49 Divinations",
+      data(),
+      textAlign: TextAlign.center,
+      style: AppTextStyle.nunito(
+          style: const TextStyle(
+        fontSize: 20,
+        color: Colors.black,
+      )),
     );
   }
 
@@ -350,4 +355,19 @@ class _HomePageState extends State<HomePage> {
       color: Colors.white,
     ));
   }
+
+
+  String data() {
+    return "Congratulations on getting this far.  I knew you would. \n\n"
+        "Now that your Genie is programmed to materialise things that you expect "
+        "and want to happen for you, your life will be better for it.  You no "
+        "longer need The List, but if you do need a List, the right thing will "
+        "come to you\n\n"
+        "I would appreciate any feedback that you have, because whenever another "
+        "life on Planet Earth becomes a little better, we all benefit from it.  "
+        "With your help, Neural Genie will become a powerful force for good.\n\n"
+        "neuralgenie@creationeer.co.uk";
+  }
+
+
 }
