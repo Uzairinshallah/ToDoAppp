@@ -67,7 +67,7 @@ class _LearnPageState extends State<LearnPage> {
 
 Imagine how it would feel if you discovered a magic lamp, rubbed it, and a Genie appeared, to grant your wishes.  The good news is that the lamp is already in your hands.  The Genie in the lamp is your subconscious mind, the Genie’s body is the amazing neural network of your brain.
 
-You are not aware of it, but the Genie works very hard for you, controlling almost all of your life[^1].  You think it’s your conscious mind  that makes your decisions but what usually happens is that the Genie conjures up a lightning-fast decision, feeling or action.  Only _much_ later - in terms of brain speed - does your conscious mind invent a “logical” reason why the Genie made that decision[^2].  Your conscious mind even invents realities - which look <span style="text-decoration:underline;">totally</span> real to you - to fit what the Genie has already come up with.
+You are not aware of it, but the Genie works very hard for you, controlling almost all of your life.  You think it’s your conscious mind  that makes your decisions but what usually happens is that the Genie conjures up a lightning-fast decision, feeling or action.  Only _much_ later - in terms of brain speed - does your conscious mind invent a “logical” reason why the Genie made that decision.  Your conscious mind even invents realities - which look <span style="text-decoration:underline;">totally</span> real to you - to fit what the Genie has already come up with.
 
 You can’t talk directly with the Genie - nobody can.  It stays hidden in the lamp.  The few ways to see what the Genie does include looking at what you have truly done in your life (not what you _think_ you have done), or asking friends to honestly say what sort of person you are.  If parts of your life haven’t gone as you would like or you are struggling to make certain things work however hard you try, it’s probably because your Genie isn’t coded for those results.  This explains why you can read hundreds of self-help books, but not be better for it, because you aren’t really _living_ what they preach - you need to convince your Genie.
 
@@ -90,8 +90,8 @@ We’re told that some people are naturally better at spotting opportunities, or
 People are trying to change all aspects of their lives - careers, health, relationships - using many different methods.  But if you can just influence the Genie, everything else will simply follow.
 
 
-![alt_text](resource:assets/images/complete.gif#300x80 "image_tooltip" )
 
+![alt_text](resource:assets/images/complete.gif#300x80 "image_tooltip" )
 
 Even though the Genie won’t talk directly with you, there are ways to influence it.  You could repeat things over and over, which is how you learn to drive a car without the need to think about it.  The Genie may listen to hypnosis sessions, if you are lucky.  The Genie can also be fooled, if you spend a long time  pretending to be a certain way until the attitude sticks - the so-called "fake it ‘til you make it".
 
