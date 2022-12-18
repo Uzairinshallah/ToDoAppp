@@ -51,7 +51,7 @@ class Splash extends State<SplashScreen> {
               )),
             ),
             const SizedBox(
-              height: 50,
+              height: 25,
             ),
             Card(
               margin: EdgeInsets.zero,

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.neural_genie">
    <application
-        android:label="neural_genie"
+        android:label="Neural Genie"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -294,7 +294,7 @@ class _HomePageState extends State<HomePage> {
         Card(
           margin: const EdgeInsets.all(12),
           clipBehavior: Clip.antiAlias,
-          elevation: 15,
+          elevation: 5,
           child: GestureDetector(
             onTap: () {
               Navigator.pushReplacement(

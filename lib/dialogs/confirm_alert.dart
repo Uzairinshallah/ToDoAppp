@@ -24,11 +24,11 @@ class ConfirmDeviation extends StatelessWidget {
           // get user input
 
           Text(
-            "Is this divination truly what you want and expect?",
+            "Is this Divination truly what you want and expect?",
             style: AppTextStyle.nunito(
                 style: TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 12.sp,
+              fontSize: 12,
             )),
           ),
           SizedBox(height: 20.h),

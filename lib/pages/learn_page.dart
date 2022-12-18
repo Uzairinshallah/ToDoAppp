@@ -139,7 +139,7 @@ Begin by writing a simple Divination - a thing that you _know_ will happen.  For
 To write the Divination, click on this icon at the bottom of the screen:
 
 
-![alt_text](resource:assets/images/lamp_grey.gif#300x80 "image_tooltip" )
+![alt_text](resource:assets/images/add.gif#300x80 "image_tooltip" )
 
 
 Once submitted, you cannot change the Divination, so be sure to write it how you want it to be (careful what you wish for...) and that it is truly what you want.  Don’t worry, the Genie knows what you _really_ want, even if it’s difficult for you to write it clearly.  You do not need to do anything else in a special or particular way.  Writing the wish in The List  is all that is needed.
@@ -222,7 +222,7 @@ That’s all there is to it.  The method works best if it is kept as simple as p
         Card(
           margin: EdgeInsets.zero,
           clipBehavior: Clip.antiAlias,
-          elevation: 15,
+          elevation: 5,
           child: GestureDetector(
             onTap: () {
               Navigator.pushReplacement(
