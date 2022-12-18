@@ -66,7 +66,7 @@ class Splash extends State<SplashScreen> {
                     context,
                     MaterialPageRoute(
                       builder: (ctx) {
-                        return const LearnPage();
+                        return LearnPage();
                       },
                     ),
                   );

@@ -48,23 +48,23 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       );
-      player.play(AssetSource("audio.mp3")).whenComplete(() {
-        if (db.toDoList.length == 49) {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const ListCompleteDialog();
-            },
-          );
-        }
-        setState(() {
-          db.toDoList[index][1] = true;
-          db.updateDataBase();
-        });
-      },);
-
+      player.play(AssetSource("audio.mp3")).whenComplete(
+        () {
+          if (db.toDoList.length == 49) {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return const ListCompleteDialog();
+              },
+            );
+          }
+          setState(() {
+            db.toDoList[index][1] = true;
+            db.updateDataBase();
+          });
+        },
+      );
     }
-
   }
 
   void saveNewTask() async {
@@ -100,12 +100,11 @@ class _HomePageState extends State<HomePage> {
       ),
     );
     await player.play(AssetSource("audio.mp3")).whenComplete(() => {
-    // Navigator.of(context).pop(),
-        db.toDoList.add([_controller.text, false]),
-    _controller.clear(),
-    setState(() {}),
-    });
-
+          // Navigator.of(context).pop(),
+          db.toDoList.add([_controller.text, false]),
+          _controller.clear(),
+          setState(() {}),
+        });
   }
 
   void createNewTask() {
@@ -288,35 +287,55 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget elevatedButton() {
-    return Card(
-      margin: EdgeInsets.all(12),
-      clipBehavior: Clip.antiAlias,
-      elevation: 5,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (ctx) {
-                return const LearnPage();
-              },
-            ),
-          );
-        },
-        child: Container(
-          width: 95,
-          height: 35,
-          decoration: BoxDecoration(
-            color: CColors.themeColor,
-          ),
-          child: Center(
-            child: Text(
-              "Learn",
-              style: buildTextStyle(),
+    return Column(
+      children: [
+        Card(
+          margin: EdgeInsets.all(12),
+          clipBehavior: Clip.antiAlias,
+          elevation: 15,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) {
+                    return LearnPage();
+                  },
+                ),
+              );
+            },
+            child: Container(
+              width: 95,
+              height: 35,
+              decoration: BoxDecoration(
+                color: CColors.themeColor,
+              ),
+              child: Center(
+                child: Text(
+                  "Learn",
+                  style: buildTextStyle(),
+                ),
+              ),
             ),
           ),
         ),
-      ),
+        SizedBox(
+          height: 30.h,
+        ),
+        (db.toDoList.length <= 49)
+            ? SizedBox()
+            : Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: const Text(
+                  "You Have Successfully Added \n Your 49 Divinations",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+      ],
     );
   }
 
