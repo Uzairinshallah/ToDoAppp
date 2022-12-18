@@ -259,10 +259,10 @@ That’s all there is to it.  The method works best if it is kept as simple as p
                 child: const Text(
                   "You Have Successfully Added \n Your 49 Divinations",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: AppTextStyle.nunito(style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,
-                  ),
+                  )),
                 ),
               ),
       ],
