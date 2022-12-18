@@ -166,7 +166,6 @@ The fulfilment of one Divination will unlock the next.  Begin with perhaps ten s
 That’s all there is to it.  The method works best if it is kept as simple as possible, with few rigid rules.  There’s no need to work hard.  Your Genie has been working hard all your life, programmed by the world to produce results that you didn’t necessarily ask for.  It’s now time to let your Genie work hard doing things that you <span style="text-decoration:underline;">have</span> asked for…
 
 
-![alt_text](images/image9.gif "image_tooltip")
 
 
 
