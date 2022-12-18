@@ -256,7 +256,7 @@ That’s all there is to it.  The method works best if it is kept as simple as p
             ? const SizedBox()
             : Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: const Text(
+                child:  Text(
                   "You Have Successfully Added \n Your 49 Divinations",
                   textAlign: TextAlign.center,
                   style: AppTextStyle.nunito(style: TextStyle(
