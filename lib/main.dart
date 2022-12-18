@@ -14,7 +14,7 @@ void main() async {
   runApp(
       DevicePreview(
         enabled: kDebugMode,
-        builder: (context) => MyApp(), //
+        builder: (context) => const MyApp(), //
       ));// Wrap your app
 }
 
