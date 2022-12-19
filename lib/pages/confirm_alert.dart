@@ -37,7 +37,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
               style: AppTextStyle.nunito(
                   style: const TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 12,
+                fontSize: 18,
               )),
             ),
             getHeight(20.h),
@@ -66,7 +66,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                             "Yes",
                             style: AppTextStyle.nunito(
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 24.w,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
                               ),
@@ -101,7 +101,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                             "No",
                             style: AppTextStyle.nunito(
                                 style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 24.w,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             )),
