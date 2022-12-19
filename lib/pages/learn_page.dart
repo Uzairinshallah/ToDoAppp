@@ -377,7 +377,7 @@ class _LearnPageState extends State<LearnPage> {
                 height: 8,
               ),
               Image.asset(
-                "assets/images/complete.gif",
+                "assets/images/add.gif",
                 width: 100,
                 height: 60,
               ),
@@ -401,7 +401,7 @@ class _LearnPageState extends State<LearnPage> {
                 height: 8,
               ),
               Image.asset(
-                "assets/images/complete.gif",
+                "assets/images/complete_text.gif",
                 width: 100,
                 height: 60,
               ),
@@ -445,6 +445,9 @@ class _LearnPageState extends State<LearnPage> {
                   "Genie work hard doing things that you have asked for…",
                   style: normalStyle(),
                   textAlign: TextAlign.justify),
+              SizedBox(
+                height: 15.h,
+              ),
               elevatedButton(context),
               SizedBox(
                 height: 10.h,
