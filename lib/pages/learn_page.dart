@@ -3,6 +3,7 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
 import 'package:neural_genie/util/app_text_style.dart';
+import 'package:styled_text/styled_text.dart';
 
 import '../data/database.dart';
 import '../util/ccolors.dart';
@@ -250,46 +251,244 @@ class _LearnPageState extends State<LearnPage> {
                   style: normalStyle(),
                 ),
               ),
-              Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text("• ",style: normalStyle(),),
-                      Expanded(
-                        child: Text("The scientific reasons that have been presented here",style: normalStyle(),),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text("• ",style: normalStyle(),),
-                      Expanded(
-                        child: Text("The scientific reasons that have been presented here",style: normalStyle(),),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text("• ",style: normalStyle(),),
-                      Expanded(
-                        child: Text("The scientific reasons that have been presented here",style: normalStyle(),),
-                      ),
-                    ],
-                  ),
-
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "• ",
+                          style: normalStyle(),
+                          textAlign: TextAlign.justify,
+                        ),
+                        Expanded(
+                          child: Text(
+                            "The scientific reasons that have been presented here",
+                            style: normalStyle(),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 2,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "• ",
+                          style: normalStyle(),
+                        ),
+                        Expanded(
+                          child: buildStyledText("A special <bold>place</bold> "
+                              "(The List in this app) for you to write down what you want and expect to happen"),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 2,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "• ",
+                          style: normalStyle(),
+                        ),
+                        Expanded(
+                          child: buildStyledText("A <bold>potent method</bold> "
+                              "to convince your Genie that this technique works\n"),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
+              buildStyledText(
+                  "The first part of this <bold>potent method</bold> was the "
+                  "unusually high price that you paid for this app. Scientists "
+                  "have proven that expensive pills are more effective [5], "
+                  "because our Genie thinks they are. So your Genie already "
+                  "knows that this app will be more effective, and will finally "
+                  "start working for you to make the changes that you want in "
+                  "your life.\n"),
+              buildStyledText(
+                  "The second part of this <bold>potent method</bold> steals the "
+                  "process that has misdirected your Genie, but this time uses "
+                  "it for good. Even though you can’t talk directly with your "
+                  "Genie, it does take notice of the world. If it experiences "
+                  "something enough, the Genie thinks this is normal, and works "
+                  "towards it. If you ask for something in a certain way and the "
+                  "thing always materialises, the Genie will learn that what you "
+                  "ask for will appear.\n"),
+              buildStyledText(
+                  "The third part of the <bold>potent method</bold> "
+                  "uses the same approach that has been used by Shaolin monks "
+                  "for centuries to perform their amazing feats of mental and "
+                  "physical prowess. The monks face a simple task, which becomes "
+                  "increasingly difficult until it takes an almost supernatural "
+                  "skill to complete. You train your Genie in the same way. "
+                  "To begin, you ask for things that you expect and know will "
+                  "happen easily. The Genie learns that this works, then will "
+                  "accept increasingly challenging wishes.\n"),
+              Text(
+                "While this seems difficult, you can do it using a beautifully "
+                "simple process that requires very little effort. So let us "
+                "begin….",
+                style: normalStyle(),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Image.asset(
+                "assets/images/complete.gif",
+                width: 100,
+                height: 60,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                "There are 49 blank spaces in The List. (There is a good reason "
+                "for limiting the number).\n",
+                style: normalStyle(),
+              ),
+              Text(
+                "Each space is for a “Divination” - something you expect and "
+                "want to happen. Only when one Divination has happened can "
+                "you enter the next.\n",
+                style: normalStyle(),
+              ),
+              Text(
+                "Begin by writing a simple Divination - a thing that you know "
+                "will happen. For example “I will watch a leaf fall” in the "
+                "autumn or “I will run 1 mile in 6 minutes” when your average "
+                "time for 1 mile is 6 minutes. Remember… your Genie is watching.",
+                style: normalStyle(),
+              ),
+              Text(
+                "\nTo write the Divination, click on this icon at the bottom of the screen:",
+                style: normalStyle(),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Image.asset(
+                "assets/images/complete.gif",
+                width: 100,
+                height: 60,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Once submitted, you cannot change the Divination, so be sure to"
+                " write it how you want it to be (careful what you wish for...) "
+                "and that it is truly what you want. Don’t worry, the Genie "
+                "knows what you really want, even if it’s difficult for you "
+                "to write it clearly. You do not need to do anything else in "
+                "a special or particular way. Writing the wish in The List "
+                "is all that is needed.\n\nYour Genie will now be primed to "
+                "notice the Divination when it occurs, and will bring it to "
+                "your attention. Mark it as complete by clicking the icon "
+                "next to the Divination:",
+                style: normalStyle(),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Image.asset(
+                "assets/images/complete.gif",
+                width: 100,
+                height: 60,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "The icon will become illuminated:",
+                  style: normalStyle(),
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Image.asset(
+                "assets/images/complete.gif",
+                width: 100,
+                height: 60,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              buildStyledTextItalic(
+                  "This is <italic>reinforcement</italic>, where the Genie "
+                  "learns that what you write in The List will happen.\n\n"),
+              Text(
+                  "The fulfilment of one Divination will unlock the next. "
+                  "Begin with perhaps ten simple things, then continue to write "
+                  "increasingly ambitious Divinations that you expect and want to "
+                  "happen. Allow the Genie to bring them to your attention as "
+                  "you go about your normal life, and mark them as complete when "
+                  "they occur. There is no limit to how quickly or slowly you achieve your "
+                  "Divinations. You will know… you will feel the guidance of your Genie.\n\n"
+                  "That’s all there is to it. The method works best if it is "
+                  "kept as simple as possible, with few rigid rules. There’s "
+                  "no need to work hard. Your Genie has been working hard all "
+                  "your life, programmed by the world to produce results that "
+                  "you didn’t necessarily ask for. It’s now time to let your "
+                  "Genie work hard doing things that you have asked for…",
+                  style: normalStyle(),
+                  textAlign: TextAlign.justify),
               elevatedButton(context),
               SizedBox(
-                height: 20.h,
-              )
+                height: 10.h,
+              ),
+              buildStyledTextItalic(
+                  "[1] According to Nobel prize winner Daniel Kahneman, PhD.\n"
+                  "[2] Researchers at the Max Planck Institute for Human Cognitive"
+                  " and Brain Sciences in Leipzig, Charité University Hospital "
+                  "and the Bernstein Center for Computational Neuroscience "
+                  "in Berlin found that your brain makes up its mind up to "
+                  "ten seconds before you realise it.\n"
+                  "[3] As found in a study of <italic>1,000,000</italic> people by top positive "
+                  "psychology researchers.\n"
+                  "[4] A Harvard study showed that people who pretended to be fighter"
+                  "pilots actually had improved vision because they were told that"
+                  "fighter pilots have excellent vision.\n"
+                  "[5] According to studies such as the one carried out by the Gardner"
+                  "Center for Parkinson's Disease and Movement Disorders."),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  StyledText buildStyledText(String text) {
+    return StyledText(
+      text: text,
+      style: normalStyle(),
+      textAlign: TextAlign.justify,
+      tags: {
+        'bold': StyledTextTag(style: boldStyle()),
+      },
+    );
+  }
+
+  StyledText buildStyledTextItalic(String text) {
+    return StyledText(
+      text: text,
+      style: normalItalic(),
+      textAlign: TextAlign.justify,
+      tags: {
+        'italic': StyledTextTag(style: normalItalic()),
+      },
     );
   }
 
@@ -301,6 +500,13 @@ class _LearnPageState extends State<LearnPage> {
           fontWeight: FontWeight.bold,
           color: Colors.black,
           fontStyle: FontStyle.italic),
+    );
+  }
+
+  TextStyle boldStyle() {
+    return AppTextStyle.nunito(
+      style: const TextStyle(
+          fontWeight: FontWeight.bold, color: Colors.black, fontSize: 12),
     );
   }
 

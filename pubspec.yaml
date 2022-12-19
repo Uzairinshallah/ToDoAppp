@@ -42,6 +42,7 @@ dependencies:
   footer: ^0.0.4
   flutter_markdown: ^0.6.13
   device_preview: ^1.1.0
+  styled_text: ^6.0.0
 
 dev_dependencies:
   flutter_test:

@@ -705,6 +705,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.1"
+  styled_text:
+    dependency: "direct main"
+    description:
+      name: styled_text
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.0.0"
   term_glyph:
     dependency: transitive
     description:
@@ -775,6 +782,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0+2"
+  xmlstream:
+    dependency: transitive
+    description:
+      name: xmlstream
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   yaml:
     dependency: transitive
     description:
@@ -784,4 +798,4 @@ packages:
     version: "3.1.1"
 sdks:
   dart: ">=2.18.4 <3.0.0"
-  flutter: ">=3.0.0"
+  flutter: ">=3.3.0"
