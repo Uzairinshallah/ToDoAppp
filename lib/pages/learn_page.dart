@@ -137,7 +137,7 @@ class _LearnPageState extends State<LearnPage> {
                 height: 60,
               ),
               const SizedBox(
-                height: 8,
+                height: 10,
               ),
               RichText(
                 textAlign: TextAlign.justify,
@@ -156,7 +156,8 @@ class _LearnPageState extends State<LearnPage> {
                       style: normalStyle(),
                     ),
                     TextSpan(
-                      text: "We’re told that our genes determine what our bodies"
+                      text:
+                          "We’re told that our genes determine what our bodies"
                           " become, how we behave, and which diseases we are likely "
                           "to succumb to - as if we are completely helpless and "
                           "must accept what we have. But genes aren’t the full "
@@ -171,10 +172,115 @@ class _LearnPageState extends State<LearnPage> {
                       text: "we can control our Genie.\n\n",
                       style: normalStyle(),
                     ),
+                    TextSpan(
+                      text: "We’re told that some people are naturally better "
+                          "at spotting opportunities, or at learning languages, "
+                          "or solving maths problems, but we can all do this if "
+                          "we can believe it [4].",
+                      style: normalStyle(),
+                    ),
+                    itItalic(),
+                    TextSpan(
+                      text: "we can control our Genie.\n\n",
+                      style: normalStyle(),
+                    ),
+                    TextSpan(
+                      text: "People are trying to change all aspects of their "
+                          "lives - careers, health, relationships - using many "
+                          "different methods. But if you can just influence the "
+                          "Genie, everything else will simply follow.",
+                      style: normalStyle(),
+                    ),
                   ],
                   style: normalStyle(),
                   text: "Here are some benefits of controlling our Genie:\n\n",
                 ),
+              ),
+              Image.asset(
+                "assets/images/complete.gif",
+                width: 100,
+                height: 60,
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Text(
+                "Even though the Genie won’t talk directly with you, there "
+                "are ways to influence it. You could repeat things over and "
+                "over, which is how you learn to drive a car without the need "
+                "to think about it. The Genie may listen to hypnosis sessions, "
+                "if you are lucky. The Genie can also be fooled, if you spend"
+                " a long time pretending to be a certain way until the attitude "
+                "sticks - the so-called \"fake it ‘til you make it\".\n\nBut you "
+                "don’t need any of these techniques. The Neural Genie method "
+                "comes down to one incredibly simple principle:\n",
+                style: normalStyle(),
+                textAlign: TextAlign.justify,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Text(
+                  "All we need to do is convince the Genie that"
+                  " our chosen method for life improvement will work\n",
+                  style: normalItalic(),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Text(
+                "Rather than spending a huge amount of time and effort "
+                "meditating and visualising all of the things that we would "
+                "like to happen, over and over again, we simply accept that "
+                "the Genie is running us. So all we need to do is:\n",
+                style: normalStyle(),
+                textAlign: TextAlign.justify,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Text(
+                  "convince the Genie that writing something down once in a "
+                  "special place will make it happen\n",
+                  style: normalItalic(),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "These are the secrets of how Neural Genie works:\n",
+                  style: normalStyle(),
+                ),
+              ),
+              Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text("• ",style: normalStyle(),),
+                      Expanded(
+                        child: Text("The scientific reasons that have been presented here",style: normalStyle(),),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text("• ",style: normalStyle(),),
+                      Expanded(
+                        child: Text("The scientific reasons that have been presented here",style: normalStyle(),),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text("• ",style: normalStyle(),),
+                      Expanded(
+                        child: Text("The scientific reasons that have been presented here",style: normalStyle(),),
+                      ),
+                    ],
+                  ),
+
+                ],
               ),
               elevatedButton(context),
               SizedBox(
