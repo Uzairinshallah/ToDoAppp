@@ -55,6 +55,6 @@ class ListCompleteDialog extends StatelessWidget {
         "I would appreciate any feedback that you have, because whenever another "
         "life on Planet Earth becomes a little better, we all benefit from it.  "
         "With your help, Neural Genie will become a powerful force for good.\n\n"
-        "neuralgenie@creationeer.co.uk";
+        "neuralgenie@gmail.com";
   }
 }
