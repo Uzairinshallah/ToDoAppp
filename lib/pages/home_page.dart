@@ -324,28 +324,34 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           height: 30.h,
         ),
-        (db.toDoList.length != 49)
-            ? const SizedBox()
-            : Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: text(),
-              ),
+        text(),
       ],
     );
   }
 
   Widget text() {
-    return Text(
-      // "You Have Successfully Added \n Your 49 Divinations",
-      data(),
-      textAlign: TextAlign.center,
-      style: AppTextStyle.nunito(
-          style: const TextStyle(
-        fontSize: 20,
-        color: Colors.black,
-      )),
-    );
+    if( db.toDoList.length !=49 ){
+      return const SizedBox();
+    }
+    if( db.toDoList[48][1] ){
+      return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: Text(
+          data(),
+          textAlign: TextAlign.justify,
+          style: AppTextStyle.nunito(
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.black,
+              )),
+        ),
+      );
+    }
+    return const SizedBox();
   }
+
+
+
 
   TextStyle buildTextStyle() {
     return AppTextStyle.nunito(
@@ -366,7 +372,7 @@ class _HomePageState extends State<HomePage> {
         "I would appreciate any feedback that you have, because whenever another "
         "life on Planet Earth becomes a little better, we all benefit from it.  "
         "With your help, Neural Genie will become a powerful force for good.\n\n"
-        "neuralgenie@creationeer.co.uk";
+        "neuralgenie@gmail.com";
   }
 
 
