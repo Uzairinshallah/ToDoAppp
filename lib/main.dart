@@ -11,6 +11,9 @@ void main() async {
   await Hive.initFlutter();
   var box = await Hive.openBox('mybox');
   await box.clear();
+  ToDoDataBase db = ToDoDataBase();
+  db.toDoList = List.generate(48, (index) =>["$index", true] );
+  db.updateDataBase();
   runApp(
     DevicePreview(
       enabled: kDebugMode,

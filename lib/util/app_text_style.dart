@@ -11,7 +11,11 @@ class AppTextStyle {
   static TextStyle lex({TextStyle? style}) =>
       GoogleFonts.lexend(textStyle: style);
 
-  static TextStyle nunito({TextStyle? style}) =>
-      GoogleFonts.nunito(textStyle: style);
-
+  static TextStyle nunito({TextStyle? style}) {
+    var defaultStyle = const TextStyle(fontSize: 12);
+    if (style != null) {
+      defaultStyle = style.copyWith(fontSize: 12);
+    }
+    return GoogleFonts.nunito(textStyle: defaultStyle);
+  }
 }

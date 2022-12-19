@@ -19,9 +19,10 @@ class ListCompleteDialog extends StatelessWidget {
           Text(
             "Neural Genie",
             style: AppTextStyle.nunito(
-                style: const TextStyle(
-              color: Color(0xff6b009c),
-            )),
+              style: const TextStyle(
+                color: Color(0xff6b009c),
+              ),
+            ),
           ),
         ],
       ),
@@ -40,9 +41,7 @@ class ListCompleteDialog extends StatelessWidget {
             },
             child: Text(
               "OK",
-              style: AppTextStyle.nunito(
-                style: const TextStyle()
-              ),
+              style: AppTextStyle.nunito(style: const TextStyle()),
             ))
       ],
     );
