@@ -338,7 +338,7 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Text(
           data(),
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.justify,
           style: AppTextStyle.nunito(
               style: const TextStyle(
                 fontSize: 20,
@@ -372,7 +372,7 @@ class _HomePageState extends State<HomePage> {
         "I would appreciate any feedback that you have, because whenever another "
         "life on Planet Earth becomes a little better, we all benefit from it.  "
         "With your help, Neural Genie will become a powerful force for good.\n\n"
-        "neuralgenie@creationeer.co.uk";
+        "neuralgenie@gmail.com";
   }
 
 
