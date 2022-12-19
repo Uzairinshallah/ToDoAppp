@@ -20,7 +20,6 @@ class ListCompleteDialog extends StatelessWidget {
             "Neural Genie",
             style: AppTextStyle.nunito(
                 style: const TextStyle(
-              fontSize: 25,
               color: Color(0xff6b009c),
             )),
           ),
@@ -29,6 +28,7 @@ class ListCompleteDialog extends StatelessWidget {
       scrollable: true,
       content: Text(
         data(),
+        textAlign: TextAlign.justify,
         style: AppTextStyle.nunito(),
       ),
       actions: [
@@ -40,7 +40,9 @@ class ListCompleteDialog extends StatelessWidget {
             },
             child: Text(
               "OK",
-              style: AppTextStyle.nunito(),
+              style: AppTextStyle.nunito(
+                style: const TextStyle()
+              ),
             ))
       ],
     );
