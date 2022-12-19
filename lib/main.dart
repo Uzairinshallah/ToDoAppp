@@ -9,13 +9,14 @@ import 'data/database.dart';
 
 void main() async {
   await Hive.initFlutter();
- var box =  await Hive.openBox('mybox');
+  var box = await Hive.openBox('mybox');
   await box.clear();
   runApp(
-      DevicePreview(
-        enabled: kDebugMode,
-        builder: (context) => const MyApp(), //
-      ));// Wrap your app
+    DevicePreview(
+      enabled: kDebugMode,
+      builder: (context) => const MyApp(), //
+    ),
+  ); // Wrap your app
 }
 
 class MyApp extends StatelessWidget {
