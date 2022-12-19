@@ -225,9 +225,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   int itemCount() {
-    // if( db.toDoList.length > 49 ){
-    //   return db.toDoList.length;
-    // }
+    if( db.toDoList.length > 49 ){
+      return db.toDoList.length;
+    }
     return 49;
   }
 
