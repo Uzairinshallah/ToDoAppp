@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,20 +47,68 @@ class _LearnPageState extends State<LearnPage> {
                 width: 150,
                 height: 100,
               ),
-              Text("Neural Genie",
+              Text(
+                "Neural Genie",
+                style: AppTextStyle.nunito(
+                  style: const TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff6b009c),
+                  ),
+                ),
+              ),
+              RichText(
+                textAlign: TextAlign.justify,
+                text: TextSpan(
+                  text: "Do you find that your life is without direction and "
+                      "meaning, and that no matter how hard you try, you "
+                      "can’t get what you want?\n\nHave you ever wondered "
+                      "why some people seem to be born lucky and attract "
+                      "good things to themselves?\n\n",
                   style: AppTextStyle.nunito(
-                    style: const TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xff6b009c),
-                    ),
-                  )),
-              Markdown(
-                shrinkWrap: true,
-                controller: ScrollController(),
-                selectable: true,
-                data:
-                    '''
+                    style: boldAndItalicStyle(),
+                  ),
+                  children: [
+                    TextSpan(
+                        text: "Imagine how it would feel if you discovered "
+                            "a magic lamp, rubbed it, and a Genie appeared, to grant"
+                            " your wishes. The good news is that the lamp is already"
+                            " in your hands. The Genie in the lamp is your subconscious"
+                            " mind, the Genie’s body is the amazing neural network "
+                            "of your brain.",
+                        style: AppTextStyle.nunito(style: normalStyle()))
+                  ],
+                ),
+              ),
+              elevatedButton(context),
+              SizedBox(
+                height: 20.h,
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  TextStyle boldAndItalicStyle() {
+    return const TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+        fontStyle: FontStyle.italic);
+  }
+
+  TextStyle normalStyle() {
+    return const TextStyle(
+        fontWeight: FontWeight.normal, fontStyle: FontStyle.normal);
+  }
+
+  Markdown buildMarkdown() {
+    return Markdown(
+      shrinkWrap: true,
+      controller: ScrollController(),
+      selectable: true,
+      data: '''
 * Do you find that your life is without direction and meaning, and that no matter how hard you try, you can’t get what you want?
 * Have you ever wondered why some people seem to be born lucky and attract good things to themselves?
 
@@ -173,34 +220,23 @@ That’s all there is to it.  The method works best if it is kept as simple as p
 ## Notes
 
 [^1]:
-     According to Nobel prize winner Daniel Kahneman, PhD
+   According to Nobel prize winner Daniel Kahneman, PhD
 
 [^2]:
-     Researchers at the Max Planck Institute for Human Cognitive and Brain Sciences in Leipzig, Charité University Hospital and the Bernstein Center for Computational Neuroscience in Berlin found that your brain makes up its mind up to ten seconds before you realise it.
+   Researchers at the Max Planck Institute for Human Cognitive and Brain Sciences in Leipzig, Charité University Hospital and the Bernstein Center for Computational Neuroscience in Berlin found that your brain makes up its mind up to ten seconds before you realise it.
 
 [^3]:
-     According to a study of _1,000,000 _people by top positive psychology researchers
+   According to a study of _1,000,000 _people by top positive psychology researchers
 
 [^4]:
-     A Harvard study showed that people who pretended to be fighter pilots actually had improved
-    vision because they were told that fighter pilots have excellent vision
+   A Harvard study showed that people who pretended to be fighter pilots actually had improved
+  vision because they were told that fighter pilots have excellent vision
 
 [^5]:
-      According to studies such as that carried out by the Gardner Center for Parkinson's Disease and Movement Disorders
+    According to studies such as that carried out by the Gardner Center for Parkinson's Disease and Movement Disorders
 ''',
-              ),
-
-              elevatedButton(context),
-              SizedBox(
-                height: 20.h,
-              )
-            ],
-          ),
-        ),
-      ),
     );
   }
-
 
   Widget imageWidget(String imagePath) {
     return Center(
@@ -211,8 +247,6 @@ That’s all there is to it.  The method works best if it is kept as simple as p
       ),
     );
   }
-
-
 
   Widget elevatedButton(BuildContext context) {
     debugPrint(db.toDoList.length.toString());
@@ -256,10 +290,11 @@ That’s all there is to it.  The method works best if it is kept as simple as p
             ? const SizedBox()
             : Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child:  Text(
+                child: Text(
                   "You Have Successfully Added \n Your 49 Divinations",
                   textAlign: TextAlign.center,
-                  style: AppTextStyle.nunito(style: TextStyle(
+                  style: AppTextStyle.nunito(
+                      style: const TextStyle(
                     fontSize: 20,
                     color: Colors.black,
                   )),
