@@ -33,11 +33,11 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Are you sure that this is complete?",
+              "Are you sure that this Divination has been fulfilled?",
               style: AppTextStyle.nunito(
                   style: const TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 18,
+                fontSize: 12,
               )),
             ),
             getHeight(20.h),
@@ -66,7 +66,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                             "Yes",
                             style: AppTextStyle.nunito(
                               style: TextStyle(
-                                fontSize: 24.w,
+                                fontSize: 12,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white,
                               ),
@@ -101,7 +101,7 @@ class _ConfirmAlertState extends State<ConfirmAlert> {
                             "No",
                             style: AppTextStyle.nunito(
                                 style: TextStyle(
-                              fontSize: 24.w,
+                              fontSize: 12,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
                             )),
