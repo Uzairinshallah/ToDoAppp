@@ -353,11 +353,14 @@ class _LearnPageState extends State<LearnPage> {
               const SizedBox(
                 height: 10,
               ),
-              Text(
-                "There are 49 blank spaces in The List. (There is a good reason "
-                "for limiting the number).\n",
-                textAlign: TextAlign.justify,
-                style: normalStyle(),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "There are 49 blank spaces in The List. (There is a good reason "
+                  "for limiting the number).\n",
+                  textAlign: TextAlign.justify,
+                  style: normalStyle(),
+                ),
               ),
               Text(
                 "Each space is for a “Divination” - something you expect and "
@@ -374,10 +377,13 @@ class _LearnPageState extends State<LearnPage> {
                 style: normalStyle(),
                 textAlign: TextAlign.justify,
               ),
-              Text(
-                "\nTo write the Divination, click on this icon at the bottom of the screen:",
-                style: normalStyle(),
-                textAlign: TextAlign.justify,
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "\nTo write the Divination, click on this icon at the bottom of the screen:",
+                  style: normalStyle(),
+                  textAlign: TextAlign.justify,
+                ),
               ),
               const SizedBox(
                 height: 8,
@@ -432,9 +438,13 @@ class _LearnPageState extends State<LearnPage> {
               const SizedBox(
                 height: 10,
               ),
-              buildStyledTextItalic(
-                  "This is <italic>reinforcement</italic>, where the Genie "
-                  "learns that what you write in The List will happen.\n\n"),
+              Align(
+                alignment: Alignment.topLeft,
+
+                child: buildStyledTextItalic(
+                    "This is <italic>reinforcement</italic>, where the Genie "
+                    "learns that what you write in The List will happen.\n\n"),
+              ),
               buildStyledTextItalic(
                   "The fulfilment of one Divination will unlock the next. "
                   "Begin with perhaps ten simple things, then continue to write "
