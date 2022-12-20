@@ -198,6 +198,9 @@ class _LearnPageState extends State<LearnPage> {
                   text: "Here are some benefits of controlling our Genie:\n\n",
                 ),
               ),
+              const SizedBox(
+                height: 8,
+              ),
               Image.asset(
                 "assets/images/complete.gif",
                 width: 100,
@@ -353,18 +356,22 @@ class _LearnPageState extends State<LearnPage> {
               const SizedBox(
                 height: 10,
               ),
-              Text(
-                "There are 49 blank spaces in The List. (There is a good reason "
-                "for limiting the number).\n",
-                textAlign: TextAlign.justify,
-                style: normalStyle(),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "There are 49 blank spaces in The List. (There is a good reason "
+                  "for limiting the number).\n",
+                  textAlign: TextAlign.justify,
+                  style: normalStyle(),
+                ),
               ),
-              Text(
-                "Each space is for a “Divination” - something you expect and "
-                "want to happen. Only when one Divination has happened can "
-                "you enter the next.\n",
-                style: normalStyle(),
-                textAlign: TextAlign.justify,
+              Align(
+                alignment: Alignment.topLeft,
+                child: buildStyledTextItalic(
+                  "Each space is for a Divination - something you <italic>expect</italic> and "
+                  " <italic>want</italic> to happen. Only when one Divination has happened can "
+                  "you enter the next.\n",
+                ),
               ),
               Text(
                 "Begin by writing a simple Divination - a thing that you know "
@@ -374,10 +381,13 @@ class _LearnPageState extends State<LearnPage> {
                 style: normalStyle(),
                 textAlign: TextAlign.justify,
               ),
-              Text(
-                "\nTo write the Divination, click on this icon at the bottom of the screen:",
-                style: normalStyle(),
-                textAlign: TextAlign.justify,
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "\nTo write the Divination, click on this icon at the bottom of the screen:",
+                  style: normalStyle(),
+                  textAlign: TextAlign.justify,
+                ),
               ),
               const SizedBox(
                 height: 8,
@@ -432,25 +442,28 @@ class _LearnPageState extends State<LearnPage> {
               const SizedBox(
                 height: 10,
               ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: buildStyledTextItalic(
+                    "This is <italic>reinforcement</italic>, where the Genie "
+                    "learns that what you write in The List will happen.\n\n"),
+              ),
               buildStyledTextItalic(
-                  "This is <italic>reinforcement</italic>, where the Genie "
-                  "learns that what you write in The List will happen.\n\n"),
-              buildStyledTextItalic(
-                  "The fulfilment of one Divination will unlock the next. "
-                  "Begin with perhaps ten simple things, then continue to write "
-                  "increasingly ambitious Divinations that you "
-                  "<italic>expect</italic> and <italic>want</italic> to "
-                  "happen. Allow the Genie to bring them to your attention as "
-                  "you go about your normal life, and mark them as complete when "
-                  "they occur. There is no limit to how quickly or slowly you achieve your "
-                  "Divinations. You will know… you will feel the guidance of your Genie.\n\n"
-                  "That’s all there is to it. The method works best if it is "
-                  "kept as simple as possible, with few rigid rules. There’s "
-                  "no need to work hard. Your Genie has been working hard all "
-                  "your life, programmed by the world to produce results that "
-                  "you didn’t necessarily ask for. It’s now time to let your "
-                  "Genie work hard doing things that you have asked for…",
-                  ),
+                "The fulfilment of one Divination will unlock the next. "
+                "Begin with perhaps ten simple things, then continue to write "
+                "increasingly ambitious Divinations that you "
+                "<italic>expect</italic> and <italic>want</italic> to "
+                "happen. Allow the Genie to bring them to your attention as "
+                "you go about your normal life, and mark them as complete when "
+                "they occur. There is no limit to how quickly or slowly you achieve your "
+                "Divinations. You will know… you will feel the guidance of your Genie.\n\n"
+                "That’s all there is to it. The method works best if it is "
+                "kept as simple as possible, with few rigid rules. There’s "
+                "no need to work hard. Your Genie has been working hard all "
+                "your life, programmed by the world to produce results that "
+                "you didn’t necessarily ask for. It’s now time to let your "
+                "Genie work hard doing things that you have asked for…",
+              ),
               SizedBox(
                 height: 15.h,
               ),
@@ -605,7 +618,11 @@ class _LearnPageState extends State<LearnPage> {
 
   TextStyle buildTextStylee() {
     return AppTextStyle.nunito(
-      style: const TextStyle(fontSize: 25, color: Colors.white),
+      style: const TextStyle(
+        fontSize: 25,
+        color: Colors.white,
+        fontWeight: FontWeight.w700,
+      ),
     );
   }
 
