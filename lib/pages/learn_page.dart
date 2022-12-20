@@ -198,6 +198,9 @@ class _LearnPageState extends State<LearnPage> {
                   text: "Here are some benefits of controlling our Genie:\n\n",
                 ),
               ),
+              const SizedBox(
+                height: 8,
+              ),
               Image.asset(
                 "assets/images/complete.gif",
                 width: 100,
@@ -615,7 +618,11 @@ class _LearnPageState extends State<LearnPage> {
 
   TextStyle buildTextStylee() {
     return AppTextStyle.nunito(
-      style: const TextStyle(fontSize: 25, color: Colors.white),
+      style: const TextStyle(
+        fontSize: 25,
+        color: Colors.white,
+        fontWeight: FontWeight.w700,
+      ),
     );
   }
 

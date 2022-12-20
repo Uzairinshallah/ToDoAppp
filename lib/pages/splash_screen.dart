@@ -119,7 +119,11 @@ class Splash extends State<SplashScreen> {
 
   TextStyle buildTextStyle() {
     return AppTextStyle.nunito(
-        style: const TextStyle(fontSize: 25, color: Colors.white));
+        style: const TextStyle(
+      fontSize: 25,
+      color: Colors.white,
+      fontWeight: FontWeight.w700,
+    ));
   }
 
   TextStyle buildTitleTextStyle() {
