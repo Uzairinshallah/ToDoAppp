@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:neural_genie/pages/learn_page.dart';
 import 'package:neural_genie/util/app_text_style.dart';
 
@@ -28,7 +29,6 @@ class Splash extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Center(
         child: Column(
@@ -43,12 +43,7 @@ class Splash extends State<SplashScreen> {
             ),
             Text(
               "Neural Genie",
-              style: AppTextStyle.nunito(
-                  style: const TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.w500,
-                color: Color(0xff6b009c),
-              )),
+              style: buildTitleTextStyle(),
             ),
             const SizedBox(
               height: 25,
@@ -125,5 +120,13 @@ class Splash extends State<SplashScreen> {
   TextStyle buildTextStyle() {
     return AppTextStyle.nunito(
         style: const TextStyle(fontSize: 25, color: Colors.white));
+  }
+
+  TextStyle buildTitleTextStyle() {
+    return GoogleFonts.nunito(
+        textStyle: const TextStyle(
+            fontSize: 40,
+            fontWeight: FontWeight.w500,
+            color: Color(0xff6b009c)));
   }
 }

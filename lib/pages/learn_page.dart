@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
 import 'package:neural_genie/util/app_text_style.dart';
 import 'package:styled_text/styled_text.dart';
@@ -53,13 +54,7 @@ class _LearnPageState extends State<LearnPage> {
               ),
               Text(
                 "Neural Genie",
-                style: AppTextStyle.nunito(
-                  style: const TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xff6b009c),
-                  ),
-                ),
+                style: buildTitleTextStyle(),
               ),
               SizedBox(
                 height: 30.h,
@@ -345,6 +340,7 @@ class _LearnPageState extends State<LearnPage> {
                 "simple process that requires very little effort. So let us "
                 "begin….",
                 style: normalStyle(),
+                textAlign: TextAlign.justify,
               ),
               const SizedBox(
                 height: 8,
@@ -360,6 +356,7 @@ class _LearnPageState extends State<LearnPage> {
               Text(
                 "There are 49 blank spaces in The List. (There is a good reason "
                 "for limiting the number).\n",
+                textAlign: TextAlign.justify,
                 style: normalStyle(),
               ),
               Text(
@@ -367,6 +364,7 @@ class _LearnPageState extends State<LearnPage> {
                 "want to happen. Only when one Divination has happened can "
                 "you enter the next.\n",
                 style: normalStyle(),
+                textAlign: TextAlign.justify,
               ),
               Text(
                 "Begin by writing a simple Divination - a thing that you know "
@@ -374,10 +372,12 @@ class _LearnPageState extends State<LearnPage> {
                 "autumn or “I will run 1 mile in 6 minutes” when your average "
                 "time for 1 mile is 6 minutes. Remember… your Genie is watching.",
                 style: normalStyle(),
+                textAlign: TextAlign.justify,
               ),
               Text(
                 "\nTo write the Divination, click on this icon at the bottom of the screen:",
                 style: normalStyle(),
+                textAlign: TextAlign.justify,
               ),
               const SizedBox(
                 height: 8,
@@ -390,18 +390,17 @@ class _LearnPageState extends State<LearnPage> {
               const SizedBox(
                 height: 10,
               ),
-              Text(
+              buildStyledTextItalic(
                 "Once submitted, you cannot change the Divination, so be sure to"
                 " write it how you want it to be (careful what you wish for...) "
                 "and that it is truly what you want. Don’t worry, the Genie "
-                "knows what you really want, even if it’s difficult for you "
+                "knows what you <italic>really</italic> want, even if it’s difficult for you "
                 "to write it clearly. You do not need to do anything else in "
                 "a special or particular way. Writing the wish in The List "
                 "is all that is needed.\n\nYour Genie will now be primed to "
                 "notice the Divination when it occurs, and will bring it to "
                 "your attention. Mark it as complete by clicking the icon "
                 "next to the Divination:",
-                style: normalStyle(),
               ),
               const SizedBox(
                 height: 8,
@@ -419,6 +418,7 @@ class _LearnPageState extends State<LearnPage> {
                 child: Text(
                   "The icon will become illuminated:",
                   style: normalStyle(),
+                  textAlign: TextAlign.justify,
                 ),
               ),
               const SizedBox(
@@ -435,10 +435,11 @@ class _LearnPageState extends State<LearnPage> {
               buildStyledTextItalic(
                   "This is <italic>reinforcement</italic>, where the Genie "
                   "learns that what you write in The List will happen.\n\n"),
-              Text(
+              buildStyledTextItalic(
                   "The fulfilment of one Divination will unlock the next. "
                   "Begin with perhaps ten simple things, then continue to write "
-                  "increasingly ambitious Divinations that you expect and want to "
+                  "increasingly ambitious Divinations that you "
+                  "<italic>expect</italic> and <italic>want</italic> to "
                   "happen. Allow the Genie to bring them to your attention as "
                   "you go about your normal life, and mark them as complete when "
                   "they occur. There is no limit to how quickly or slowly you achieve your "
@@ -449,8 +450,7 @@ class _LearnPageState extends State<LearnPage> {
                   "your life, programmed by the world to produce results that "
                   "you didn’t necessarily ask for. It’s now time to let your "
                   "Genie work hard doing things that you have asked for…",
-                  style: normalStyle(),
-                  textAlign: TextAlign.justify),
+                  ),
               SizedBox(
                 height: 15.h,
               ),
@@ -493,7 +493,7 @@ class _LearnPageState extends State<LearnPage> {
   StyledText buildStyledTextItalic(String text) {
     return StyledText(
       text: text,
-      style: normalItalic(),
+      style: normalStyle(),
       textAlign: TextAlign.justify,
       tags: {
         'italic': StyledTextTag(style: normalItalic()),
@@ -607,5 +607,14 @@ class _LearnPageState extends State<LearnPage> {
     return AppTextStyle.nunito(
       style: const TextStyle(fontSize: 25, color: Colors.white),
     );
+  }
+
+  TextStyle buildTitleTextStyle() {
+    return GoogleFonts.nunito(
+        textStyle: const TextStyle(
+      fontSize: 40,
+      fontWeight: FontWeight.w500,
+      color: Color(0xff6b009c),
+    ));
   }
 }

@@ -368,7 +368,7 @@ class _HomePageState extends State<HomePage> {
         "Now that your Genie is programmed to materialise things that you expect "
         "and want to happen for you, your life will be better for it.  You no "
         "longer need The List, but if you do need a List, the right thing will "
-        "come to you\n\n"
+        "come to you.\n\n"
         "I would appreciate any feedback that you have, because whenever another "
         "life on Planet Earth becomes a little better, we all benefit from it.  "
         "With your help, Neural Genie will become a powerful force for good.\n\n"

@@ -12,9 +12,9 @@ class AppTextStyle {
       GoogleFonts.lexend(textStyle: style);
 
   static TextStyle nunito({TextStyle? style}) {
-    var defaultStyle = const TextStyle(fontSize: 12);
+    var defaultStyle = const TextStyle(fontSize: 14);
     if (style != null) {
-      defaultStyle = style.copyWith(fontSize: 12);
+      defaultStyle = style.copyWith(fontSize: 14);
     }
     return GoogleFonts.nunito(textStyle: defaultStyle);
   }
