@@ -10,7 +10,7 @@ class Functions {
         style: AppTextStyle.nunito(
             style: TextStyle(
           fontSize: 20,
-          color: Colors.black,
+          color: Colors.white,
         )),
       ),
     );
