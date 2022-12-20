@@ -48,6 +48,9 @@ class _LearnPageState extends State<LearnPage> {
                 width: 150,
                 height: 100,
               ),
+              SizedBox(
+                height: 10.h,
+              ),
               Text(
                 "Neural Genie",
                 style: AppTextStyle.nunito(
@@ -57,6 +60,9 @@ class _LearnPageState extends State<LearnPage> {
                     color: Color(0xff6b009c),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 30.h,
               ),
               RichText(
                 textAlign: TextAlign.justify,
